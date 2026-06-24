@@ -1,7 +1,7 @@
 name: translate_app
 description: "A new Flutter project."
 
-publish_to: 'none' 
+publish_to: 'none'
 
 version: 1.0.0+1
 
@@ -11,10 +11,12 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  flutter_localizations:
+    sdk: flutter
 
+  intl: ^0.20.0
   cupertino_icons: ^1.0.8
   flutter_screenutil: ^5.7.0
-
 
 dev_dependencies:
   flutter_test:
@@ -24,9 +26,7 @@ dev_dependencies:
   flutter_native_splash: ^2.4.7
   flutter_launcher_icons: ^0.14.4
 
-
 flutter:
-
 
   uses-material-design: true
 
@@ -36,18 +36,16 @@ flutter:
 flutter_launcher_icons:
   android: "launcher_icon"
   ios: true
-  adaptive_icon_background: "#FFFFFF"  
-  image_path: "assets/images/appLogo.png" 
-  adaptive_icon_foreground: "assets/images/appIcon.png" 
+  adaptive_icon_background: "#FFFFFF"
+  image_path: "assets/images/appLogo.png"
+  adaptive_icon_foreground: "assets/images/appIcon.png"
 
 flutter_native_splash:
-  color: "#FFFFFF"              
-  image: "assets/images/appLogo.png"        
+  color: "#FFFFFF"
+  image: "assets/images/appLogo.png"
   android_12:
-    color: "#FFFFFF"           
+    color: "#FFFFFF"
     image: "assets/images/appLogo.png"
 
-
-
-
-
+flutter_intl:
+  enabled: true
