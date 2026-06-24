@@ -17,6 +17,8 @@ dependencies:
   intl: ^0.20.0
   cupertino_icons: ^1.0.8
   flutter_screenutil: ^5.7.0
+  flutter_bloc: ^9.1.1
+  hydrated_bloc: ^11.0.0
 
 dev_dependencies:
   flutter_test:
