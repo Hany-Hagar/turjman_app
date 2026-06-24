@@ -1,1 +1,10 @@
-{}
+{
+    "@@locale": "ar",
+
+
+    
+    "appTitle":"تُرجمان",
+    "@appTitle": {
+        "description": "The application title"
+    }
+}
