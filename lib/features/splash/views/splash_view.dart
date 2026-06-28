@@ -1,3 +1,5 @@
+// ignore_for_file: use_build_context_synchronously
+
 import '../widgets/splash_body.dart';
 import 'package:flutter/material.dart';
 import '../../../core/di/server_locator.dart';
@@ -13,27 +15,39 @@ class SplashView extends StatefulWidget {
 class _SplashViewState extends State<SplashView> {
 
   @override
-  Future<void> initState() async {
+  void initState() {
     super.initState();
-    await Future.delayed(const Duration(seconds: 2)); 
+
+    _initSplash();
+  }
+
+
+  Future<void> _initSplash() async {
+    await Future.delayed(const Duration(seconds: 2));
+
     final isFirstTimeUser = getIt<SettingsCubit>().state.isFirstTime;
+
     if (isFirstTimeUser) {
+      // navigate to onboarding
     } else {
+      // navigate to home
     }
   }
+
 
   @override
   void dispose() {
     super.dispose();
   }
 
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.white,
-        body: Center(
-          child: SplashBody(),
-        ),
+      backgroundColor: Colors.white,
+      body: Center(
+        child: SplashBody(),
+      ),
     );
   }
 }
