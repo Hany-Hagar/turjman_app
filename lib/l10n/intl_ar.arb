@@ -2,9 +2,29 @@
     "@@locale": "ar",
 
 
-    
+
     "appTitle":"تُرجمان",
     "@appTitle": {
         "description": "The application title"
+    },
+
+
+
+
+    "onBoardingButton1":"ابدأ",
+    "@onBoardingButton1": {
+        "description": "عنوان الزر الأول في شاشة الإعداد"
+    },
+    "onBoardingButton2":"التالي",
+    "@onBoardingButton2": {
+        "description": "عنوان الزر الثاني في شاشة الإعداد"
+    },
+    "onBoardingButton3":"التالي",
+    "@onBoardingButton3": {
+        "description": "عنوان الزر الثالث في شاشة الإعداد"
+    },
+    "onBoardingButton4":"ابدأ الترجمة",
+    "@onBoardingButton4": {
+        "description": "عنوان الزر الرابع في شاشة الإعداد"
     }
 }

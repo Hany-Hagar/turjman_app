@@ -59,6 +59,46 @@ class S {
       args: [],
     );
   }
+
+  /// `Let's Get Started`
+  String get onBoardingButton1 {
+    return Intl.message(
+      'Let\'s Get Started',
+      name: 'onBoardingButton1',
+      desc: 'The title of the first onboarding button',
+      args: [],
+    );
+  }
+
+  /// `Next`
+  String get onBoardingButton2 {
+    return Intl.message(
+      'Next',
+      name: 'onBoardingButton2',
+      desc: 'The title of the second onboarding button',
+      args: [],
+    );
+  }
+
+  /// `Next`
+  String get onBoardingButton3 {
+    return Intl.message(
+      'Next',
+      name: 'onBoardingButton3',
+      desc: 'The title of the third onboarding button',
+      args: [],
+    );
+  }
+
+  /// `Start Translating`
+  String get onBoardingButton4 {
+    return Intl.message(
+      'Start Translating',
+      name: 'onBoardingButton4',
+      desc: 'The title of the fourth onboarding button',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
