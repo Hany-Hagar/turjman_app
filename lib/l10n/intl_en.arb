@@ -10,6 +10,13 @@
 
 
 
+    "skip":"Skip",
+    "@skip": {
+        "description": "The title of the button to skip the setup screen"
+    },
+
+
+
     "onBoardingButton1":"Let's Get Started",
     "@onBoardingButton1": {
         "description": "The title of the first onboarding button"

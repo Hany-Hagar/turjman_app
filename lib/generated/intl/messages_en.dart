@@ -28,6 +28,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "onBoardingButton2": MessageLookupByLibrary.simpleMessage("Next"),
         "onBoardingButton3": MessageLookupByLibrary.simpleMessage("Next"),
         "onBoardingButton4":
-            MessageLookupByLibrary.simpleMessage("Start Translating")
+            MessageLookupByLibrary.simpleMessage("Start Translating"),
+        "skip": MessageLookupByLibrary.simpleMessage("Skip")
       };
 }

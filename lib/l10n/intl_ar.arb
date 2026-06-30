@@ -10,6 +10,12 @@
 
 
 
+    "skip":"تخطي",
+    "@skip": {
+        "description": "عنوان الزر لتخطي شاشة الإعداد"
+    },
+
+
 
     "onBoardingButton1":"ابدأ",
     "@onBoardingButton1": {

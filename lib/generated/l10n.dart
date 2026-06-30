@@ -60,6 +60,16 @@ class S {
     );
   }
 
+  /// `Skip`
+  String get skip {
+    return Intl.message(
+      'Skip',
+      name: 'skip',
+      desc: 'The title of the button to skip the setup screen',
+      args: [],
+    );
+  }
+
   /// `Let's Get Started`
   String get onBoardingButton1 {
     return Intl.message(

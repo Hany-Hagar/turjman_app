@@ -1,7 +1,7 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
+import '../../../../core/utils/nav_to.dart';
 import '../../models/on_boarding_model.dart';
+import '../../../setup/views/setup_view.dart';
 import '../../../../core/widgets/custom_text.dart';
 import '../../../../core/services/icon_broken.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -58,7 +58,7 @@ class _Button extends StatelessWidget {
     return GestureDetector(
       onTap: () {
         if (onBoardingModel.id == onBoardingData(context).length) {
-          log('Get Started button pressed');
+          NavTo.pushReplacement(context: context, nextPage: SetupView());
         } else {
           pageController.nextPage(
             duration: const Duration(milliseconds: 500),
@@ -94,7 +94,3 @@ class _Button extends StatelessWidget {
     );
   }
 }
-
-
-
-

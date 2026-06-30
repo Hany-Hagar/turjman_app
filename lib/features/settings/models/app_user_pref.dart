@@ -18,7 +18,7 @@ class AppUserPref {
     return AppUserPref(
       lang: "en",
       langIndex: 0,
-      theme: ThemeMode.dark,
+      theme: ThemeMode.light,
       isFirstTime: true,
       notificationsEnabled: true,
     );
