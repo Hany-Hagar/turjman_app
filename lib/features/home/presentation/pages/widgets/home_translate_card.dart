@@ -1,6 +1,7 @@
 // ignore_for_file: unused_element_parameter
 
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../../generated/l10n.dart';
 import '../../../../../core/utils/styles.dart';
 import '../../../../../core/widgets/copy_icon.dart';
@@ -8,88 +9,103 @@ import '../../../../../core/widgets/custom_text.dart';
 import '../../../../../core/services/icon_broken.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../../core/widgets/custom_text_form_field.dart';
+import '../../manager/home_cubit.dart';
+import '../../manager/home_states.dart';
 
 class HomeTranslateCard extends StatelessWidget {
   const HomeTranslateCard({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: EdgeInsets.symmetric(horizontal: 16.w),
-      padding: EdgeInsets.symmetric(horizontal: 16.w),
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(8.0),
-      ),
-      child: Column(
-        children: [
-          _InputLanguage(),
-          _TranslateText(),
-          Divider(color: Colors.grey[300], height: 32.h, thickness: 1.0),
-          const _Actions(),
-        ],
+    return BlocBuilder<HomeCubit, HomeStates>(
+      builder: (context, state) => Container(
+        margin: EdgeInsets.symmetric(horizontal: 16.w),
+        padding: EdgeInsets.symmetric(horizontal: 16.w),
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(8.0),
+        ),
+        child: Column(
+          children: [
+            _SourceLanguage(),
+            _TargetLanguage(),
+            Divider(color: Colors.grey[300], height: 32.h, thickness: 1.0),
+            const _Actions(),
+          ],
+        ),
       ),
     );
   }
 }
 
-class _InputLanguage extends StatelessWidget {
-  const _InputLanguage();
+class _SourceLanguage extends StatelessWidget {
+  const _SourceLanguage();
 
   @override
   Widget build(BuildContext context) {
     var s = S.of(context);
+    var cubit = HomeCubit.get(context);
     return Column(
       mainAxisSize: MainAxisSize.min,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        _LanguageTitle(title: s.source),
+        _LanguageTitle(title: s.source, copyValue: cubit.targetText),
         CustomTextFormField(
           maxLines: 3,
           maxAutoLines: 5,
-          autoMaxLines: false,
           border: InputBorder.none,
           padding: EdgeInsets.zero,
+          autoMaxLines: cubit.isTranslating,
           backgroundColor: Colors.transparent,
           hintText: s.sourceTextHint,
           hintStyle: Styles.textStyle500.copyWith(
             color: Colors.grey,
             fontSize: 14.0,
           ),
+          onChanged: (value) =>
+              HomeCubit.get(context).onSourceTextChanged(value),
         ),
       ],
     );
   }
 }
 
-class _TranslateText extends StatelessWidget {
-  const _TranslateText();
+class _TargetLanguage extends StatelessWidget {
+
+  const _TargetLanguage();
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisSize: MainAxisSize.min,
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        SizedBox(width: double.infinity),
-        _LanguageTitle(
-          title: S.of(context).translation,
-          titleColor: Theme.of(context).primaryColor,
-        ),
-        CustomText(
-          size: 16.sp,
-          text: "This is the translated text.",
-          type: Type.overMedium,
-        ),
-      ],
-    );
+    var cubit = HomeCubit.get(context);
+    bool isTranslating = cubit.isTranslating;
+    return isTranslating
+        ? Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              SizedBox(width: double.infinity),
+              _LanguageTitle(
+                title: S.of(context).translation,
+                titleColor: Theme.of(context).primaryColor,
+                copyValue: cubit.targetText,
+              ),
+              CustomText(
+                size: 16.sp,
+                maxLines: 5,
+                type: Type.overMedium,
+                text: cubit.targetText,
+              ),
+            ],
+          )
+        : SizedBox.shrink();
   }
 }
 
 class _LanguageTitle extends StatelessWidget {
   final String title;
   final Color? titleColor;
-  const _LanguageTitle({required this.title, this.titleColor});
+  final String copyValue;
+  const _LanguageTitle({required this.title, this.titleColor, required this.copyValue});
 
   @override
   Widget build(BuildContext context) {
@@ -105,10 +121,7 @@ class _LanguageTitle extends StatelessWidget {
             type: Type.overMedium,
           ),
           Spacer(),
-          CopyIcon(
-            value: title,
-            size: 20.sp,
-          ),
+          CopyIcon(value: copyValue, size: 20.sp),
         ],
       ),
     );

@@ -1,4 +1,5 @@
 
+import 'features/home/presentation/manager/home_cubit.dart';
 import 'generated/l10n.dart';
 import 'core/utils/theme.dart';
 import 'core/di/server_locator.dart';
@@ -33,6 +34,9 @@ class MyApp extends StatelessWidget {
       providers: [
         // SettingsCubit 
         BlocProvider(create: (context) => getIt<SettingsCubit>()),
+
+        // HomeCubit
+        BlocProvider(create: (context) => getIt<HomeCubit>()),
 
       ],
       child: BlocBuilder<SettingsCubit, AppUserPref>(
