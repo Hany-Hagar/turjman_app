@@ -1,7 +1,7 @@
 import 'package:google_mlkit_translation/google_mlkit_translation.dart';
 
 class TranslationService {
-  TranslationService._();
+  TranslationService();
 
   static final OnDeviceTranslatorModelManager _modelManager =
       OnDeviceTranslatorModelManager();
@@ -30,10 +30,8 @@ class TranslationService {
       sourceLanguage: source,
       targetLanguage: target,
     );
-    try {
-      return await translator.translateText(text);
-    } finally {
-      translator.close();
-    }
+    final result = await translator.translateText(text);
+    await translator.close();
+    return result;
   }
 }

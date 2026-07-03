@@ -2,8 +2,9 @@ import '../../../../core/services/translation_service.dart';
 import 'package:google_mlkit_translation/google_mlkit_translation.dart';
 
 class HomeData {
-  final TranslationService translationService;
-  HomeData({required this.translationService});
+  HomeData();
+
+  TranslationService translationService = TranslationService(); 
 
   List<TranslateLanguage> getSupportedLanguages() {
     return TranslationService.supportedLanguages;

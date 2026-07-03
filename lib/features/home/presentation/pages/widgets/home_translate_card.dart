@@ -55,9 +55,10 @@ class _SourceLanguage extends StatelessWidget {
           maxAutoLines: 5,
           border: InputBorder.none,
           padding: EdgeInsets.zero,
+          hintText: s.sourceTextHint,
           autoMaxLines: cubit.isTranslating,
           backgroundColor: Colors.transparent,
-          hintText: s.sourceTextHint,
+          controller: cubit.sourceTextController,
           hintStyle: Styles.textStyle500.copyWith(
             color: Colors.grey,
             fontSize: 14.0,

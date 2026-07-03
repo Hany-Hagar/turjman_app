@@ -1,15 +1,38 @@
+import 'dart:developer';
+
 import 'home_states.dart';
 import 'package:flutter/material.dart';
+import '../../data/repo/home_repo.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class HomeCubit extends Cubit<HomeStates> {
-  HomeCubit() : super(HomeInitial());
+  final HomeRepo homeRepo;
+  HomeCubit({required this.homeRepo}) : super(HomeInitial());
   static HomeCubit get(BuildContext context) => BlocProvider.of(context);
 
-  var selectedSourceLanguage = 'English';
-  var selectedTargetLanguage = 'English';
-  List<String> sourceLanguages = ['English', 'Spanish', 'French'];
-  List<String> targetLanguages = ['English', 'Spanish', 'French'];
+  var selectedSourceLanguage = '';
+  var selectedTargetLanguage = '';
+  List<String> sourceLanguages = [];
+  List<String> targetLanguages = [];
+
+  // Get supported languages
+  Future<void> getSupportedLanguages() async {
+    emit(GetSupportedLanguagesLoadingState());
+    final result = await homeRepo.getLanguages();
+    result.fold(
+      (exception) =>
+          emit(GetSupportedLanguagesErrorState(exception.toString())),
+      (languages) {
+        sourceLanguages = languages;
+        targetLanguages = languages;
+        if (languages.isNotEmpty) {
+          selectedSourceLanguage = languages.first;
+          selectedTargetLanguage = languages.last;
+        }
+        emit(GetSupportedLanguagesSuccessState());
+      },
+    );
+  }
 
   void changeSourceLanguage(String? language) {
     if (language == null) return;
@@ -34,14 +57,32 @@ class HomeCubit extends Cubit<HomeStates> {
   bool isTranslating = false;
   TextEditingController sourceTextController = TextEditingController();
 
-  void onSourceTextChanged(String? text) {
+  Future<void> onSourceTextChanged(String? text) async {
     if (text == null) return;
-    targetText = text; // For demonstration, we just copy the source text to target text
     if (text.isEmpty) {
       isTranslating = false;
+      emit(SourceTextChanged());
     } else {
       isTranslating = true;
+      await _translateText(text: text);
     }
-    emit(SourceTextChanged());
+  }
+
+  Future<void> _translateText({required String text}) async {
+    emit(TranslateTextLoadingState());
+    final result = await homeRepo.translateText(
+      text: text,
+      sourceLanguage: selectedSourceLanguage,
+      targetLanguage: selectedTargetLanguage,
+    );
+    result.fold(
+      (exception) => emit(TranslateTextErrorState(exception.toString())),
+      (translatedText) {
+        log('Source Text: $text');
+        log('Translated Text: $translatedText');
+        targetText = translatedText;
+        emit(TranslateTextSuccessState());
+      },
+    );
   }
 }

@@ -4,6 +4,7 @@ import 'home_recent_transactions.dart';
 import 'package:flutter/material.dart';
 import '../../manager/home_states.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:skeletonizer/skeletonizer.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../../core/widgets/custom_drop_down_menu.dart';
 
@@ -29,31 +30,43 @@ class _LanguageCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<HomeCubit, HomeStates>(
       builder: (context, state) {
-        final cubit = HomeCubit.get(context);
-        return Container(
-          margin: EdgeInsets.all(16.w),
-          padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
-          decoration: BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.circular(8.0),
-          ),
-          child: Row(
-            children: [
-              _LanguageItem(
-                languages: cubit.sourceLanguages,
-                selectedLanguage: cubit.selectedSourceLanguage,
-                onChanged: (language) => cubit.changeSourceLanguage(language),
-              ),
-              const _Swap(),
-              _LanguageItem(
-                languages: cubit.targetLanguages,
-                selectedLanguage: cubit.selectedTargetLanguage,
-                onChanged: (language) => cubit.changeTargetLanguage(language),
-              ),
-            ],
+        return Skeletonizer(
+          enabled: state is GetSupportedLanguagesLoadingState,
+          child: Container(
+            margin: EdgeInsets.all(16.w),
+            padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(8.0),
+            ),
+            child: _Languages(),
           ),
         );
       },
+    );
+  }
+}
+
+class _Languages extends StatelessWidget {
+  const _Languages();
+
+  @override
+  Widget build(BuildContext context) {
+    final cubit = HomeCubit.get(context);
+    return Row(
+      children: [
+        _LanguageItem(
+          languages: cubit.sourceLanguages,
+          selectedLanguage: cubit.selectedSourceLanguage,
+          onChanged: (language) => cubit.changeSourceLanguage(language),
+        ),
+        const _Swap(),
+        _LanguageItem(
+          languages: cubit.targetLanguages,
+          selectedLanguage: cubit.selectedTargetLanguage,
+          onChanged: (language) => cubit.changeTargetLanguage(language),
+        ),
+      ],
     );
   }
 }
