@@ -1,10 +1,12 @@
-import 'dart:developer';
 
 import 'package:flutter/material.dart';
+import '../../../../core/utils/nav_to.dart';
 import '../../models/on_boarding_model.dart';
+import '../../../../core/di/server_locator.dart';
 import '../../../../core/widgets/custom_text.dart';
 import '../../../../core/services/icon_broken.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import '../../../home/presentation/pages/views/home_view.dart';
 import '../../../settings/presentation/manager/settings_cubit.dart';
 
 class OnBoardingBody extends StatelessWidget {
@@ -58,7 +60,8 @@ class _Button extends StatelessWidget {
     return GestureDetector(
       onTap: () {
         if (onBoardingModel.id == onBoardingData(context).length) {
-          log('Get Started button pressed');
+          getIt<SettingsCubit>().toggleFirstTimeUser();
+          NavTo.push(context: context, nextPage: HomeView());
         } else {
           pageController.nextPage(
             duration: const Duration(milliseconds: 500),
@@ -94,7 +97,3 @@ class _Button extends StatelessWidget {
     );
   }
 }
-
-
-
-

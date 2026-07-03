@@ -1,5 +1,6 @@
 // ignore_for_file: use_build_context_synchronously
 
+import '../../home/presentation/pages/views/home_view.dart';
 import '../widgets/splash_body.dart';
 import 'package:flutter/material.dart';
 import '../../../core/utils/nav_to.dart';
@@ -29,7 +30,7 @@ class _SplashViewState extends State<SplashView> {
     if (isFirstTimeUser) {
       NavTo.push(context: context, nextPage: OnBoardingView());
     } else {
-      // navigate to home
+      NavTo.push(context: context, nextPage: HomeView());
     }
   }
 

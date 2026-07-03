@@ -99,6 +99,86 @@ class S {
       args: [],
     );
   }
+
+  /// `Source`
+  String get source {
+    return Intl.message(
+      'Source',
+      name: 'source',
+      desc: 'The source language label',
+      args: [],
+    );
+  }
+
+  /// `Type something to translate`
+  String get sourceTextHint {
+    return Intl.message(
+      'Type something to translate',
+      name: 'sourceTextHint',
+      desc: 'The hint text for the source text field',
+      args: [],
+    );
+  }
+
+  /// `Translation`
+  String get translation {
+    return Intl.message(
+      'Translation',
+      name: 'translation',
+      desc: 'The translation label',
+      args: [],
+    );
+  }
+
+  /// `Image`
+  String get image {
+    return Intl.message(
+      'Image',
+      name: 'image',
+      desc: 'The image label',
+      args: [],
+    );
+  }
+
+  /// `Camera`
+  String get camera {
+    return Intl.message(
+      'Camera',
+      name: 'camera',
+      desc: 'The camera label',
+      args: [],
+    );
+  }
+
+  /// `Voice`
+  String get voice {
+    return Intl.message(
+      'Voice',
+      name: 'voice',
+      desc: 'The voice label',
+      args: [],
+    );
+  }
+
+  /// `Recent Translations`
+  String get recentTranslations {
+    return Intl.message(
+      'Recent Translations',
+      name: 'recentTranslations',
+      desc: 'The recent translations label',
+      args: [],
+    );
+  }
+
+  /// `View All`
+  String get viewAll {
+    return Intl.message(
+      'View All',
+      name: 'viewAll',
+      desc: 'The view all label',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

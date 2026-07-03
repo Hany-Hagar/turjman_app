@@ -1,5 +1,5 @@
-class ConstAssets {
-  const ConstAssets._();
+class Assets {
+  const Assets._();
 
   // App Logos
   static const String appIcon = 'assets/images/appIcon.png';

@@ -23,11 +23,21 @@ class MessageLookup extends MessageLookupByLibrary {
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "appTitle": MessageLookupByLibrary.simpleMessage("Turjuman"),
+        "camera": MessageLookupByLibrary.simpleMessage("Camera"),
+        "image": MessageLookupByLibrary.simpleMessage("Image"),
         "onBoardingButton1":
             MessageLookupByLibrary.simpleMessage("Let\'s Get Started"),
         "onBoardingButton2": MessageLookupByLibrary.simpleMessage("Next"),
         "onBoardingButton3": MessageLookupByLibrary.simpleMessage("Next"),
         "onBoardingButton4":
-            MessageLookupByLibrary.simpleMessage("Start Translating")
+            MessageLookupByLibrary.simpleMessage("Start Translating"),
+        "recentTranslations":
+            MessageLookupByLibrary.simpleMessage("Recent Translations"),
+        "source": MessageLookupByLibrary.simpleMessage("Source"),
+        "sourceTextHint":
+            MessageLookupByLibrary.simpleMessage("Type something to translate"),
+        "translation": MessageLookupByLibrary.simpleMessage("Translation"),
+        "viewAll": MessageLookupByLibrary.simpleMessage("View All"),
+        "voice": MessageLookupByLibrary.simpleMessage("Voice")
       };
 }

@@ -10,7 +10,6 @@
 
 
 
-
     "onBoardingButton1":"ابدأ",
     "@onBoardingButton1": {
         "description": "عنوان الزر الأول في شاشة الإعداد"
@@ -26,5 +25,41 @@
     "onBoardingButton4":"ابدأ الترجمة",
     "@onBoardingButton4": {
         "description": "عنوان الزر الرابع في شاشة الإعداد"
+    },
+
+
+
+    "source":"المصدر",
+    "@source": {
+        "description": "نص التسمية للغة المصدر"
+    },
+    "sourceTextHint":"اكتب شيئًا للترجمة",
+    "@sourceTextHint": {
+        "description": "نص التلميح لحقل النص المصدر"
+    },
+    "translation":"الترجمة",
+    "@translation": {
+        "description": "نص التسمية للترجمة"
+    },
+    "image":"صورة",
+    "@image": {
+        "description": "نص التسمية للصورة"
+    },
+    "camera":"كاميرا",
+    "@camera": {
+        "description": "نص التسمية للكاميرا"
+    },
+    "voice":"صوت",
+    "@voice": {
+        "description": "نص التسمية للصوت"
+    },
+    "recentTranslations":"اخر الترجمات",
+    "@recentTranslations": {
+        "description": "نص التسمية للترجمات الأخيرة"
+    },
+    "viewAll":"عرض الكل",
+    "@viewAll": {
+        "description": "نص التسمية لعرض الكل"
     }
+
 }

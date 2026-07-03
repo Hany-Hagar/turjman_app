@@ -25,5 +25,40 @@
     "onBoardingButton4":"Start Translating",
     "@onBoardingButton4": {
         "description": "The title of the fourth onboarding button"
+    },
+
+
+
+    "source":"Source",
+    "@source": {
+        "description": "The source language label"
+    },
+    "sourceTextHint":"Type something to translate",
+    "@sourceTextHint": {
+        "description": "The hint text for the source text field"
+    },
+    "translation":"Translation",
+    "@translation": {
+        "description": "The translation label"
+    },
+    "image":"Image",
+    "@image": {
+        "description": "The image label"
+    },
+    "camera":"Camera",
+    "@camera": {
+        "description": "The camera label"
+    },
+    "voice":"Voice",
+    "@voice": {
+        "description": "The voice label"
+    },
+    "recentTranslations":"Recent Translations",
+    "@recentTranslations": {
+        "description": "The recent translations label"
+    },
+    "viewAll":"View All",
+    "@viewAll": {
+        "description": "The view all label"
     }
 }

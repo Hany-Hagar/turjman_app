@@ -52,7 +52,6 @@ class _PageIndicator extends StatelessWidget {
     return SmoothPageIndicator(
       controller: pageController,
       count: data.length,
-
       effect: ExpandingDotsEffect(
         spacing: 6,
         dotWidth: 8,
