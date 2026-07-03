@@ -50,6 +50,16 @@ class S {
     return Localizations.of<S>(context, S);
   }
 
+  /// `Copied to clipboard`
+  String get copySuccess {
+    return Intl.message(
+      'Copied to clipboard',
+      name: 'copySuccess',
+      desc: 'The message displayed when text is copied to the clipboard',
+      args: [],
+    );
+  }
+
   /// `Turjuman`
   String get appTitle {
     return Intl.message(

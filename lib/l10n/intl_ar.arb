@@ -3,6 +3,13 @@
 
 
 
+    "copySuccess":"تم النسخ إلى الحافظة",
+    "@copySuccess": {
+        "description": "الرسالة المعروضة عند نسخ النص إلى الحافظة"
+    },
+
+
+
     "appTitle":"تُرجمان",
     "@appTitle": {
         "description": "The application title"

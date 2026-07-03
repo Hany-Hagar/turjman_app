@@ -3,6 +3,13 @@
 
 
 
+    "copySuccess":"Copied to clipboard",
+    "@copySuccess": {
+        "description": "The message displayed when text is copied to the clipboard"
+    },
+
+
+
     "appTitle":"Turjuman",
     "@appTitle": {
         "description": "The application title"

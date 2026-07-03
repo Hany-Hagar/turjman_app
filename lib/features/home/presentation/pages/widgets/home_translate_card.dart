@@ -1,12 +1,13 @@
 // ignore_for_file: unused_element_parameter
 
 import 'package:flutter/material.dart';
+import '../../../../../generated/l10n.dart';
 import '../../../../../core/utils/styles.dart';
+import '../../../../../core/widgets/copy_icon.dart';
 import '../../../../../core/widgets/custom_text.dart';
 import '../../../../../core/services/icon_broken.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../../core/widgets/custom_text_form_field.dart';
-import '../../../../../generated/l10n.dart';
 
 class HomeTranslateCard extends StatelessWidget {
   const HomeTranslateCard({super.key});
@@ -104,9 +105,9 @@ class _LanguageTitle extends StatelessWidget {
             type: Type.overMedium,
           ),
           Spacer(),
-          GestureDetector(
-            onTap: () {},
-            child: Icon(size: 22.sp, color: color, Icons.copy_all_outlined),
+          CopyIcon(
+            value: title,
+            size: 20.sp,
           ),
         ],
       ),

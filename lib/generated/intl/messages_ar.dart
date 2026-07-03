@@ -24,6 +24,8 @@ class MessageLookup extends MessageLookupByLibrary {
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "appTitle": MessageLookupByLibrary.simpleMessage("تُرجمان"),
         "camera": MessageLookupByLibrary.simpleMessage("كاميرا"),
+        "copySuccess":
+            MessageLookupByLibrary.simpleMessage("تم النسخ إلى الحافظة"),
         "image": MessageLookupByLibrary.simpleMessage("صورة"),
         "onBoardingButton1": MessageLookupByLibrary.simpleMessage("ابدأ"),
         "onBoardingButton2": MessageLookupByLibrary.simpleMessage("التالي"),
