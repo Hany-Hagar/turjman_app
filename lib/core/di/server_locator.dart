@@ -10,5 +10,6 @@ void setupLocator() {
 
   // Home
   getIt.registerLazySingleton<HomeCubit>(() => HomeCubit());
-
+  
+  
 }

@@ -23,6 +23,8 @@ dependencies:
   cupertino_icons: ^1.0.8
   flutter_screenutil: ^5.7.0
   smooth_page_indicator: ^2.0.1
+  google_mlkit_translation: ^0.13.1
+  dartz: ^0.10.1
 
 dev_dependencies:
   flutter_test:
