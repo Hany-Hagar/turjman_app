@@ -14,6 +14,7 @@ import 'features/home/presentation/manager/home_cubit.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'features/settings/presentation/manager/settings_cubit.dart';
+import 'features/translations/presentation/manager/translations_cubit.dart';
 
 
 Future<void> main() async {
@@ -39,6 +40,9 @@ class MyApp extends StatelessWidget {
 
         // HomeCubit
         BlocProvider(create: (context) => getIt<HomeCubit>()),
+
+        // TranslationsCubit
+        BlocProvider(create: (context) => getIt<TranslationsCubit>()),
 
       ],
       child: BlocBuilder<SettingsCubit, AppUserPref>(
