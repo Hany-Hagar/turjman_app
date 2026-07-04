@@ -1,15 +1,16 @@
 
-import 'features/home/presentation/manager/home_cubit.dart';
 import 'generated/l10n.dart';
 import 'core/utils/theme.dart';
 import 'core/di/server_locator.dart';
 import 'package:flutter/material.dart';
+import 'core/services/hive_service.dart';
 import 'core/utils/my_bloc_observer.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'features/splash/views/splash_view.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:hydrated_bloc/hydrated_bloc.dart';
 import 'features/settings/models/app_user_pref.dart';
-import 'features/splash/views/splash_view.dart';
+import 'features/home/presentation/manager/home_cubit.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'features/settings/presentation/manager/settings_cubit.dart';
@@ -22,6 +23,7 @@ Future<void> main() async {
     storageDirectory: await getApplicationDocumentsDirectory(),
   );
   setupLocator();
+  HiveService.setupHive();
   runApp(const MyApp());
 }
 
