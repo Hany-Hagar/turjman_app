@@ -3,7 +3,7 @@ import 'package:hive_flutter/hive_flutter.dart';
 import '../../features/translations/data/models/translation_model.dart';
 
 class HiveService {
-  static void setupHive() async {
+  static Future<void> setupHive() async {
     await Hive.initFlutter();
     await Hive.openBox<TranslationModel>("translationBox");
   }
