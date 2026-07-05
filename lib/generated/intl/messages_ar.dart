@@ -26,6 +26,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "camera": MessageLookupByLibrary.simpleMessage("كاميرا"),
         "copySuccess":
             MessageLookupByLibrary.simpleMessage("تم النسخ إلى الحافظة"),
+        "emptyTranslations":
+            MessageLookupByLibrary.simpleMessage("لا توجد ترجمات بعد"),
         "image": MessageLookupByLibrary.simpleMessage("صورة"),
         "onBoardingButton1": MessageLookupByLibrary.simpleMessage("ابدأ"),
         "onBoardingButton2": MessageLookupByLibrary.simpleMessage("التالي"),
@@ -37,7 +39,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "source": MessageLookupByLibrary.simpleMessage("المصدر"),
         "sourceTextHint":
             MessageLookupByLibrary.simpleMessage("اكتب شيئًا للترجمة"),
+        "sourceTitle": MessageLookupByLibrary.simpleMessage("المصدر"),
         "translation": MessageLookupByLibrary.simpleMessage("الترجمة"),
+        "translationTitle": MessageLookupByLibrary.simpleMessage("الترجمة"),
+        "translations": MessageLookupByLibrary.simpleMessage("الترجمات"),
         "viewAll": MessageLookupByLibrary.simpleMessage("عرض الكل"),
         "voice": MessageLookupByLibrary.simpleMessage("صوت")
       };

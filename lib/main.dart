@@ -42,7 +42,7 @@ class MyApp extends StatelessWidget {
         BlocProvider(create: (context) => getIt<HomeCubit>()),
 
         // TranslationsCubit
-        BlocProvider(create: (context) => getIt<TranslationsCubit>()),
+        BlocProvider(create: (context) => getIt<TranslationsCubit>()..fetchTranslations()),
 
       ],
       child: BlocBuilder<SettingsCubit, AppUserPref>(

@@ -189,6 +189,46 @@ class S {
       args: [],
     );
   }
+
+  /// `Translations`
+  String get translations {
+    return Intl.message(
+      'Translations',
+      name: 'translations',
+      desc: 'The translations label',
+      args: [],
+    );
+  }
+
+  /// `No translations available`
+  String get emptyTranslations {
+    return Intl.message(
+      'No translations available',
+      name: 'emptyTranslations',
+      desc: 'The message displayed when there are no translations available',
+      args: [],
+    );
+  }
+
+  /// `Source`
+  String get sourceTitle {
+    return Intl.message(
+      'Source',
+      name: 'sourceTitle',
+      desc: 'The title for the source language',
+      args: [],
+    );
+  }
+
+  /// `Translation`
+  String get translationTitle {
+    return Intl.message(
+      'Translation',
+      name: 'translationTitle',
+      desc: 'The title for the translation',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

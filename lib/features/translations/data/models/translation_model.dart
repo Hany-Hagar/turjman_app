@@ -35,4 +35,14 @@ class TranslationModel {
     required this.translationType,
     required this.createdAt,
   });
+
+  // empty constructor for Hive
+  TranslationModel.empty()
+    : id = '00000000-0000-0000-0000-000000000000',
+      sourceLanguage = 'Locale',
+      targetLanguage = 'Locale',
+      sourceText = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+      translatedText = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+      translationType = TranslationType.audio,
+      createdAt = DateTime.now();
 }

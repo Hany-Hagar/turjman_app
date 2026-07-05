@@ -67,5 +67,24 @@
     "viewAll":"View All",
     "@viewAll": {
         "description": "The view all label"
+    },
+
+
+
+    "translations":"Translations",
+    "@translations": {
+        "description": "The translations label"
+    },
+    "emptyTranslations":"No translations available",
+    "@emptyTranslations": {
+        "description": "The message displayed when there are no translations available"
+    },
+    "sourceTitle":"Source",
+    "@sourceTitle": {
+        "description": "The title for the source language"
+    },
+    "translationTitle":"Translation",
+    "@translationTitle": {
+        "description": "The title for the translation"
     }
 }

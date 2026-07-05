@@ -26,6 +26,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "camera": MessageLookupByLibrary.simpleMessage("Camera"),
         "copySuccess":
             MessageLookupByLibrary.simpleMessage("Copied to clipboard"),
+        "emptyTranslations":
+            MessageLookupByLibrary.simpleMessage("No translations available"),
         "image": MessageLookupByLibrary.simpleMessage("Image"),
         "onBoardingButton1":
             MessageLookupByLibrary.simpleMessage("Let\'s Get Started"),
@@ -38,7 +40,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "source": MessageLookupByLibrary.simpleMessage("Source"),
         "sourceTextHint":
             MessageLookupByLibrary.simpleMessage("Type something to translate"),
+        "sourceTitle": MessageLookupByLibrary.simpleMessage("Source"),
         "translation": MessageLookupByLibrary.simpleMessage("Translation"),
+        "translationTitle": MessageLookupByLibrary.simpleMessage("Translation"),
+        "translations": MessageLookupByLibrary.simpleMessage("Translations"),
         "viewAll": MessageLookupByLibrary.simpleMessage("View All"),
         "voice": MessageLookupByLibrary.simpleMessage("Voice")
       };

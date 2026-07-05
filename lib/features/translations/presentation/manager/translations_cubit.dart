@@ -1,4 +1,6 @@
+
 import 'translations_states.dart';
+import 'package:flutter/material.dart';
 import '../../data/repo/translations_repo.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../data/models/translation_model.dart';
@@ -8,6 +10,8 @@ class TranslationsCubit extends Cubit<TranslationsStates> {
 
   TranslationsCubit({required this.translationsRepo})
     : super(TranslationsInitialState());
+
+  static TranslationsCubit get(BuildContext context) => BlocProvider.of(context);
 
   List<TranslationModel> translations = [];
 

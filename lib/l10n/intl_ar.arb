@@ -67,6 +67,24 @@
     "viewAll":"عرض الكل",
     "@viewAll": {
         "description": "نص التسمية لعرض الكل"
-    }
+    },
 
+
+
+    "translations":"الترجمات",
+    "@translations": {
+        "description": "نص التسمية للترجمات"
+    },
+    "emptyTranslations":"لا توجد ترجمات بعد",
+    "@emptyTranslations": {
+        "description": "نص التسمية عندما لا توجد ترجمات"
+    },
+    "sourceTitle":"المصدر",
+    "@sourceTitle": {
+        "description": "نص التسمية لعنوان المصدر"
+    },
+    "translationTitle":"الترجمة",
+    "@translationTitle": {
+        "description": "نص التسمية لعنوان الترجمة"
+    }
 }
