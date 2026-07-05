@@ -1,9 +1,12 @@
 import 'dart:developer';
-
 import 'home_states.dart';
 import 'package:flutter/material.dart';
 import '../../data/repo/home_repo.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import '../../../../core/di/server_locator.dart';
+import 'package:turjman_app/core/enum/translation_type.dart';
+import '../../../translations/data/models/translation_model.dart';
+import '../../../translations/presentation/manager/translations_cubit.dart';
 
 class HomeCubit extends Cubit<HomeStates> {
   final HomeRepo homeRepo;
@@ -81,6 +84,17 @@ class HomeCubit extends Cubit<HomeStates> {
         log('Source Text: $text');
         log('Translated Text: $translatedText');
         targetText = translatedText;
+        getIt<TranslationsCubit>().addTranslation(
+          TranslationModel(
+            id: DateTime.now().millisecondsSinceEpoch.toString(),
+            sourceText: text,
+            createdAt: DateTime.now(),
+            translatedText: translatedText,
+            sourceLanguage: selectedSourceLanguage,
+            targetLanguage: selectedTargetLanguage,
+            translationType: TranslationType.text
+          ),
+        );
         emit(TranslateTextSuccessState());
       },
     );

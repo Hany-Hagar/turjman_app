@@ -13,12 +13,14 @@ class HomeBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        const _LanguageCard(),
-        const HomeTranslateCard(),
-        const HomeRecentTransactions(),
-      ],
+    return SingleChildScrollView(
+      child: Column(
+        children: [
+          const _LanguageCard(),
+          const HomeTranslateCard(),
+          const HomeRecentTransactions(),
+        ],
+      )
     );
   }
 }

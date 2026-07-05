@@ -1,11 +1,13 @@
+import '../enum/translation_type.dart';
 import 'package:hive_flutter/hive_flutter.dart';
-
 import '../../features/translations/data/models/translation_model.dart';
 
 class HiveService {
   static Future<void> setupHive() async {
     await Hive.initFlutter();
-    await Hive.openBox<TranslationModel>("translationBox");
+    Hive.registerAdapter(TranslationModelAdapter());
+    Hive.registerAdapter(TranslationTypeAdapter());
+    await Hive.openBox<TranslationModel>('translationBox');
   }
 
   static Box<TranslationModel> _getTranslationBox() {
