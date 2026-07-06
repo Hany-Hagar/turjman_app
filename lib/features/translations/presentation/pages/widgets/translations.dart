@@ -93,6 +93,8 @@ class _ItemData extends StatelessWidget {
     var s = S.of(context);
     var theme = Theme.of(context);
     return Column(
+      mainAxisSize: MainAxisSize.min,
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Row(
           children: [
