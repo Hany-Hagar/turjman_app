@@ -1,42 +1,57 @@
 import 'audio_states.dart';
+import 'package:flutter/material.dart';
 import '../../data/repo/audio_repo.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../../../../core/services/audio_service.dart';
 
 class AudioCubit extends Cubit<AudioStates> {
   final AudioRepo audioRepo;
-  AudioCubit({required this.audioRepo}) : super(AudioInitialState());
+  AudioCubit({required this.audioRepo}) : super(AudioInitial());
+  static AudioCubit get(BuildContext context) => BlocProvider.of(context);
 
-  Future<void> initAudio() async {
+  bool isListening = false;
+  String sourceText = '';
+
+  void initialize() {
+    isListening = false;
+    sourceText = '';
+    emit(AudioInitial());
+  }
+
+  Future<void> startListening() async {
+    isListening = true;
     emit(AudioLoading());
-    final result = await audioRepo.initAudio();
+    final result = await audioRepo.start(
+      onResult: (recognizedText, isFinal) {
+        sourceText = recognizedText;
+        emit(AudioSuccess(recognizedText));
+        if (isFinal) isListening = false;
+      },
+    );
+    result.fold((exception) {
+      isListening = false;
+      emit(AudioFailure(errorMessage: exception.toString()));
+    }, (_) {});
+  }
+
+  Future<void> endListening() async {
+    if (!isListening) return;
+    isListening = false;
+    emit(AudioLoading());
+    final result = await audioRepo.end();
     result.fold(
-      (exception) => emit(AudioFailure(message: exception.toString())),
-      (_) => emit(AudioListening()),
+      (exception) => emit(AudioFailure(errorMessage: exception.toString())),
+      (_) => emit(StoppedListening()),
     );
   }
 
-  Future<void> startListening({
-    Function(String words)? onResult,
-    SpeechResultCallback? onSpeechResult,
-  }) async {
+  Future<void> cancelListening() async {
+    if (!isListening) return;
+    isListening = false;
     emit(AudioLoading());
-    final result = await audioRepo.startListening(
-      onResult: onResult,
-      onSpeechResult: onSpeechResult,
-    );
+    final result = await audioRepo.cancel();
     result.fold(
-      (exception) => emit(AudioFailure(message: exception.toString())),
-      (_) => emit(AudioListening()),
-    );
-  }
-
-  Future<void> stopListening() async {
-    emit(AudioLoading());
-    final result = await audioRepo.stopListening();
-    result.fold(
-      (exception) => emit(AudioFailure(message: exception.toString())),
-      (_) => emit(AudioStopped()),
+      (exception) => emit(AudioFailure(errorMessage: exception.toString())),
+      (_) => emit(AudioInitial()),
     );
   }
 }

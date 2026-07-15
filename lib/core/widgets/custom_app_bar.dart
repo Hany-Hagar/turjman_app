@@ -11,6 +11,7 @@ class CustomAppBar extends StatelessWidget {
   final Widget? leadingWidget;
   final Color? iconColor;
   final String title;
+  final String? subTitle;
   final Widget? bottom;
   final Color? backgroundColor;
   final Widget? action;
@@ -21,6 +22,7 @@ class CustomAppBar extends StatelessWidget {
     this.leadingWidget,
     this.iconColor,
     required this.title,
+    this.subTitle,
     this.bottom,
     this.backgroundColor,
     this.action,
@@ -29,34 +31,34 @@ class CustomAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      decoration: _getBoxDecoration(context),
       padding: AppData.defaultAppBarPadding(context),
-      decoration: BoxDecoration(
-        color: backgroundColor ?? Theme.of(context).scaffoldBackgroundColor,
-        borderRadius: bottom != null
-            ? BorderRadius.only(
-                bottomLeft: Radius.circular(20.r),
-                bottomRight: Radius.circular(20.r),
-              )
-            : null,
-      ),
       child: Column(
         spacing: 10.h,
         children: [
           Row(
+            spacing: 10.w,
             children: [
-              ?leadingWidget,
-              if (leadingWidget == null)
-                _Start(iconColor: iconColor, leading: leading),
-              if (centerTitle) Spacer(),
-              if (!centerTitle) SizedBox(width: 16.w),
-              _Title(text: title),
-              Spacer(),
+              leadingWidget ?? _Start(iconColor: iconColor, leading: leading),
+              Expanded(child: _Title(text: title , subTitle: subTitle, centerTitle: centerTitle)),
               ?action,
             ],
           ),
           ?bottom,
         ],
       ),
+    );
+  }
+
+  BoxDecoration _getBoxDecoration(BuildContext context) {
+    return BoxDecoration(
+      color: backgroundColor ?? Theme.of(context).scaffoldBackgroundColor,
+      borderRadius: bottom != null
+          ? BorderRadius.only(
+              bottomLeft: Radius.circular(20.r),
+              bottomRight: Radius.circular(20.r),
+            )
+          : null,
     );
   }
 }
@@ -84,14 +86,43 @@ class _Start extends StatelessWidget {
 
 class _Title extends StatelessWidget {
   final String text;
-  const _Title({required this.text});
+  final String? subTitle;
+  final bool centerTitle;
+  const _Title({required this.text, this.subTitle,  required this.centerTitle});
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      mainAxisSize: MainAxisSize.max,
+      mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: centerTitle ? CrossAxisAlignment.center : CrossAxisAlignment.start,
+      children: [
+        SizedBox(
+          width: double.infinity,
+          child: CustomText(
+            text: text,
+            size: 20.sp,
+            height: 0.9,
+            type: Type.overMedium,
+            color: Theme.of(context).hintColor,
+          )
+        ),
+        if (subTitle != null) _SubTitle(text: subTitle!),
+      ],
+    );
+  }
+}
+
+class _SubTitle extends StatelessWidget {
+  final String text;
+  const _SubTitle({required this.text});
 
   @override
   Widget build(BuildContext context) {
     return CustomText(
       text: text,
-      size: 25.sp,
-      type: Type.overMedium,
+      size: 14.sp,
+      type: Type.medium,
       color: Theme.of(context).hintColor,
     );
   }

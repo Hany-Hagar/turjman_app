@@ -28,6 +28,9 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("تم النسخ إلى الحافظة"),
         "emptyTranslations":
             MessageLookupByLibrary.simpleMessage("لا توجد ترجمات بعد"),
+        "homeSubtitle": MessageLookupByLibrary.simpleMessage(
+            "أفضل تطبيق للترجمة لاحتياجاتك"),
+        "homeTitle": MessageLookupByLibrary.simpleMessage("تُرجمان"),
         "image": MessageLookupByLibrary.simpleMessage("صورة"),
         "onBoardingButton1": MessageLookupByLibrary.simpleMessage("ابدأ"),
         "onBoardingButton2": MessageLookupByLibrary.simpleMessage("التالي"),

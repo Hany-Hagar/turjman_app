@@ -36,6 +36,14 @@
 
 
 
+    "homeTitle":"تُرجمان",
+    "@homeTitle": {
+        "description": "عنوان الصفحة الرئيسية"
+    },
+    "homeSubtitle":"أفضل تطبيق للترجمة لاحتياجاتك",
+    "@homeSubtitle": {
+        "description": "العنوان الفرعي للصفحة الرئيسية"
+    },
     "source":"المصدر",
     "@source": {
         "description": "نص التسمية للغة المصدر"

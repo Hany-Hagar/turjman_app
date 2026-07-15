@@ -28,6 +28,9 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Copied to clipboard"),
         "emptyTranslations":
             MessageLookupByLibrary.simpleMessage("No translations available"),
+        "homeSubtitle": MessageLookupByLibrary.simpleMessage(
+            "The best translation app for your needs"),
+        "homeTitle": MessageLookupByLibrary.simpleMessage("Turjuman"),
         "image": MessageLookupByLibrary.simpleMessage("Image"),
         "onBoardingButton1":
             MessageLookupByLibrary.simpleMessage("Let\'s Get Started"),

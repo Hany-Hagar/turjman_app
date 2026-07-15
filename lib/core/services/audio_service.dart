@@ -1,4 +1,4 @@
-import 'dart:async';
+// ignore_for_file: deprecated_member_use
 import 'dart:developer';
 import 'package:speech_to_text/speech_to_text.dart';
 
@@ -10,13 +10,13 @@ class AudioService {
   AudioService._internal();
 
   final SpeechToText _speech = SpeechToText();
+
   bool _isInitialized = false;
 
+  bool get isInitialized => _isInitialized;
   bool get isListening => _speech.isListening;
-  bool get isAvailable => _isInitialized;
 
-  /// Initializes the speech recognition service.
-  Future<bool> initSpeech() async {
+  Future<bool> init() async {
     if (_isInitialized) return true;
 
     try {
@@ -25,50 +25,39 @@ class AudioService {
       _isInitialized = false;
       log("Speech initialization failed: $e");
     }
+
     return _isInitialized;
   }
 
-  /// Starts listening for speech input and returns the recognized text via the onResult callback.
-  Future<void> startListening({
-    Function(String words)? onResult,
-    SpeechResultCallback? onSpeechResult,
+  Future<void> start({
+    required SpeechResultCallback onResult,
   }) async {
     if (!_isInitialized) {
-      log("AudioService not initialized. Call initAudio() first.");
-      return;
-    }
-    if (onResult == null && onSpeechResult == null) {
-      log("AudioService has no result callback.");
+      log("SpeechService not initialized. Call init() first.");
       return;
     }
 
+    if (_speech.isListening) return;
+
     await _speech.listen(
-      listenOptions: SpeechListenOptions(
-        cancelOnError: false,
-        partialResults: true,
-        listenMode: ListenMode.dictation,
-        pauseFor: const Duration(seconds: 8),
-        listenFor: const Duration(minutes: 10),
-      ),
+      listenMode: ListenMode.dictation,
+      partialResults: true,
+      cancelOnError: false,
+      pauseFor: const Duration(seconds: 8),
+      listenFor: const Duration(minutes: 10),
       onResult: (result) {
-        if (onSpeechResult != null) {
-          onSpeechResult(result.recognizedWords, result.finalResult);
-        } else {
-          onResult?.call(result.recognizedWords);
-        }
+        onResult(result.recognizedWords, result.finalResult);
       },
     );
   }
 
-  /// Stops the current listening session and processes final results.
-  Future<void> stopListening() async {
+  Future<void> stop() async {
     if (_speech.isListening) {
       await _speech.stop();
     }
   }
 
-  /// Cancels the current listening session and discards results.
-  Future<void> cancelListening() async {
+  Future<void> cancel() async {
     if (_speech.isListening) {
       await _speech.cancel();
     }

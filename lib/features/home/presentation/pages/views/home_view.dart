@@ -23,8 +23,8 @@ class _Top extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CustomAppBar(
-      centerTitle: true,
-      title: S.of(context).appTitle,
+      title: S.of(context).homeTitle,
+      subTitle: S.of(context).homeSubtitle,
       leadingWidget: Image.asset(Assets.appIcon, width: 40, height: 40),
       action: GestureDetector(
         child: Icon(IconBroken.Setting, size: 28.sp),

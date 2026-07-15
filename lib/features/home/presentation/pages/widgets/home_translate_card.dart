@@ -1,14 +1,16 @@
 // ignore_for_file: unused_element_parameter
 
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../../generated/l10n.dart';
+import '../../../../../core/utils/nav_to.dart';
 import '../../../../../core/utils/styles.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../../core/widgets/copy_icon.dart';
 import '../../../../../core/widgets/custom_text.dart';
 import '../../../../../core/services/icon_broken.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../../core/widgets/custom_text_form_field.dart';
+import '../../../../audio/presentations/pages/views/audio_view.dart';
 import '../../manager/home_cubit.dart';
 import '../../manager/home_states.dart';
 
@@ -22,7 +24,7 @@ class HomeTranslateCard extends StatelessWidget {
         margin: EdgeInsets.zero,
         padding: EdgeInsets.symmetric(horizontal: 16.w),
         decoration: BoxDecoration(
-        color: Theme.of(context).cardColor,
+          color: Theme.of(context).cardColor,
           borderRadius: BorderRadius.circular(8.r),
         ),
         child: Column(
@@ -72,7 +74,6 @@ class _SourceLanguage extends StatelessWidget {
 }
 
 class _TargetLanguage extends StatelessWidget {
-
   const _TargetLanguage();
 
   @override
@@ -106,7 +107,11 @@ class _LanguageTitle extends StatelessWidget {
   final String title;
   final Color? titleColor;
   final String copyValue;
-  const _LanguageTitle({required this.title, this.titleColor, required this.copyValue});
+  const _LanguageTitle({
+    required this.title,
+    this.titleColor,
+    required this.copyValue,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -142,26 +147,27 @@ class _Actions extends StatelessWidget {
         children: [
           Expanded(
             child: _ActionItem(
-              icon: IconBroken.Image,
-              text: "Image",
               color: Colors.blue,
+              icon: IconBroken.Image,
+              text: S.of(context).image,
               onPressed: () {},
             ),
           ),
           Expanded(
             child: _ActionItem(
-              icon: IconBroken.Camera,
-              text: 'Camera',
               color: Colors.green,
+              icon: IconBroken.Camera,
+              text: S.of(context).camera,
               onPressed: () {},
             ),
           ),
           Expanded(
             child: _ActionItem(
-              icon: IconBroken.Voice,
-              text: 'Voice',
               color: Colors.orange,
-              onPressed: () {},
+              icon: IconBroken.Voice,
+              text: S.of(context).voice,
+              onPressed: () =>
+                  NavTo.push(context: context, nextPage: const AudioView()),
             ),
           ),
         ],
@@ -184,18 +190,20 @@ class _ActionItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      spacing: 8.w,
-      children: [
-        CircleAvatar(
-          radius: 18.sp,
-          backgroundColor: color.withValues(alpha: 0.1),
-          child: Icon(icon, color: color, size: 22.sp),
-        ),
-        Expanded(
-          child: CustomText(text: text, size: 16.sp),
-        ),
-      ],
+    return GestureDetector(
+      onTap: onPressed,
+      child: Row(
+        spacing: 8.w,
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          CircleAvatar(
+            radius: 18.sp,
+            backgroundColor: color.withValues(alpha: 0.1),
+            child: Icon(icon, color: color, size: 22.sp),
+          ),
+          CustomText(text: text, size: 16.sp),
+        ],
+      ),
     );
   }
 }

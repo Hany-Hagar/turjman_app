@@ -36,6 +36,14 @@
 
 
 
+    "homeTitle":"Turjuman",
+    "@homeTitle": {
+        "description": "The title of the home page"
+    },
+    "homeSubtitle":"The best translation app for your needs",
+    "@homeSubtitle": {
+        "description": "The subtitle of the home page"
+    },
     "source":"Source",
     "@source": {
         "description": "The source language label"

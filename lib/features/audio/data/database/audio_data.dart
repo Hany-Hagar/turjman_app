@@ -4,33 +4,22 @@ class AudioData {
   final AudioService audioService;
   AudioData({required this.audioService});
 
-  void initAudio() {
-    try {
-      audioService.initSpeech();
-    } catch (e) {
-      rethrow;
-    }
+  Future<bool> init() async {
+    return await audioService.init();
   }
 
-  void startListening({
-    Function(String words)? onResult,
-    SpeechResultCallback? onSpeechResult,
-  }) {
-    try {
-      audioService.startListening(
-        onResult: onResult,
-        onSpeechResult: onSpeechResult,
-      );
-    } catch (e) {
-      rethrow;
-    }
+  Future<void> start({
+    required SpeechResultCallback onResult,
+  }) async {
+    await audioService.start(onResult: onResult);
   }
 
-  void stopListening() {
-    try {
-      audioService.stopListening();
-    } catch (e) {
-      rethrow;
-    }
+  Future<void> stop() async {
+    await audioService.stop();
   }
+
+  Future<void> cancel() async {
+    await audioService.cancel();
+  }
+
 }

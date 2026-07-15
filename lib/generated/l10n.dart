@@ -110,6 +110,26 @@ class S {
     );
   }
 
+  /// `Turjuman`
+  String get homeTitle {
+    return Intl.message(
+      'Turjuman',
+      name: 'homeTitle',
+      desc: 'The title of the home page',
+      args: [],
+    );
+  }
+
+  /// `The best translation app for your needs`
+  String get homeSubtitle {
+    return Intl.message(
+      'The best translation app for your needs',
+      name: 'homeSubtitle',
+      desc: 'The subtitle of the home page',
+      args: [],
+    );
+  }
+
   /// `Source`
   String get source {
     return Intl.message(
