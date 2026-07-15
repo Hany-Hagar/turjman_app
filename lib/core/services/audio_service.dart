@@ -1,14 +1,13 @@
 import 'dart:async';
 import 'dart:developer';
 import 'package:speech_to_text/speech_to_text.dart';
-import 'package:speech_to_text/speech_recognition_error.dart';
 
 typedef SpeechResultCallback = void Function(String words, bool isFinal);
 
-class SpeechService {
-  static final SpeechService _instance = SpeechService._internal();
-  factory SpeechService() => _instance;
-  SpeechService._internal();
+class AudioService {
+  static final AudioService _instance = AudioService._internal();
+  factory AudioService() => _instance;
+  AudioService._internal();
 
   final SpeechToText _speech = SpeechToText();
   bool _isInitialized = false;
@@ -17,21 +16,11 @@ class SpeechService {
   bool get isAvailable => _isInitialized;
 
   /// Initializes the speech recognition service.
-  Future<bool> initSpeech({
-    Function(String status)? onStatus,
-    Function(SpeechRecognitionError error)? onError,
-  }) async {
+  Future<bool> initSpeech() async {
     if (_isInitialized) return true;
 
     try {
-      _isInitialized = await _speech.initialize(
-        onStatus: (status) {
-          if (onStatus != null) onStatus(status);
-        },
-        onError: (errorNotification) {
-          if (onError != null) onError(errorNotification);
-        },
-      );
+      _isInitialized = await _speech.initialize();
     } catch (e) {
       _isInitialized = false;
       log("Speech initialization failed: $e");
@@ -43,20 +32,18 @@ class SpeechService {
   Future<void> startListening({
     Function(String words)? onResult,
     SpeechResultCallback? onSpeechResult,
-    String localeId = 'ar_EG',
   }) async {
     if (!_isInitialized) {
-      log("SpeechService not initialized. Call initSpeech() first.");
+      log("AudioService not initialized. Call initAudio() first.");
       return;
     }
     if (onResult == null && onSpeechResult == null) {
-      log("SpeechService has no result callback.");
+      log("AudioService has no result callback.");
       return;
     }
 
     await _speech.listen(
       listenOptions: SpeechListenOptions(
-        localeId: localeId,
         cancelOnError: false,
         partialResults: true,
         listenMode: ListenMode.dictation,
