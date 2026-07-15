@@ -16,7 +16,9 @@ class HiveService {
 
   static List<TranslationModel> fetchTranslations() {
     final box = _getTranslationBox();
-    return box.values.toList();
+    final translations = box.values.toList();
+    translations.sort((a, b) => b.createdAt.compareTo(a.createdAt));
+    return translations;
   }
 
   static Future<void> addTranslation(TranslationModel translation) async {

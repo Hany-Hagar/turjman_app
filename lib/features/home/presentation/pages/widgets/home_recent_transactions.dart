@@ -13,10 +13,9 @@ class HomeRecentTransactions extends StatelessWidget {
   Widget build(BuildContext context) {
     var s = S.of(context);
     return Column(
+      spacing: 8.h,
       children: [
-        Padding(
-          padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
-          child: Row(
+         Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               CustomText(
@@ -35,7 +34,7 @@ class HomeRecentTransactions extends StatelessWidget {
               ),
             ],
           ),
-        ),
+      
         Translations(isRecent: true),
       ],
     );

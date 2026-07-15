@@ -19,11 +19,11 @@ class HomeTranslateCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<HomeCubit, HomeStates>(
       builder: (context, state) => Container(
-        margin: EdgeInsets.symmetric(horizontal: 16.w),
+        margin: EdgeInsets.zero,
         padding: EdgeInsets.symmetric(horizontal: 16.w),
         decoration: BoxDecoration(
-          color: Colors.white,
-          borderRadius: BorderRadius.circular(8.0),
+        color: Theme.of(context).cardColor,
+          borderRadius: BorderRadius.circular(8.r),
         ),
         child: Column(
           children: [

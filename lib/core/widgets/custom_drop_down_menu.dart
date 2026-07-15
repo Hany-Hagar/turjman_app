@@ -27,6 +27,9 @@ class CustomDropDownMenu extends StatelessWidget {
         : null;
 
     return DropdownButtonFormField<String>(
+      dropdownColor: Colors.blue,
+      focusColor: Colors.blue,
+      
       value: selectedValue,
       hint: hintText == null
           ? null
@@ -41,7 +44,7 @@ class CustomDropDownMenu extends StatelessWidget {
       decoration: InputDecoration(
         isDense: true,
         filled: true,
-        fillColor: theme.scaffoldBackgroundColor,
+        fillColor: theme.cardColor,
         border: _inputBorder(borderColor),
         enabledBorder: _inputBorder(borderColor),
         focusedBorder: _inputBorder(theme.primaryColor),

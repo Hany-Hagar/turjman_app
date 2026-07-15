@@ -1,4 +1,3 @@
-
 import 'translations_states.dart';
 import 'package:flutter/material.dart';
 import '../../data/repo/translations_repo.dart';
@@ -11,9 +10,16 @@ class TranslationsCubit extends Cubit<TranslationsStates> {
   TranslationsCubit({required this.translationsRepo})
     : super(TranslationsInitialState());
 
-  static TranslationsCubit get(BuildContext context) => BlocProvider.of(context);
+  static TranslationsCubit get(BuildContext context) =>
+      BlocProvider.of(context);
 
   List<TranslationModel> translations = [];
+  List<TranslationModel> recentTranslations = [];
+
+  void _setTranslations(List<TranslationModel> translations) {
+    this.translations = translations;
+    recentTranslations = translations.take(5).toList();
+  }
 
   Future<void> fetchTranslations() async {
     emit(FetchTranslationsLoadingState());
@@ -22,7 +28,7 @@ class TranslationsCubit extends Cubit<TranslationsStates> {
       (error) =>
           emit(FetchTranslationsErrorState(errorMessage: error.toString())),
       (translations) {
-        this.translations = translations;
+        _setTranslations(translations);
         emit(FetchTranslationsSuccessState());
       },
     );
@@ -34,7 +40,7 @@ class TranslationsCubit extends Cubit<TranslationsStates> {
     result.fold(
       (error) => emit(AddTranslationErrorState(errorMessage: error.toString())),
       (_) {
-        translations.add(translation);
+        _setTranslations([translation, ...translations]);
         emit(AddTranslationSuccessState());
       },
     );
@@ -47,7 +53,9 @@ class TranslationsCubit extends Cubit<TranslationsStates> {
       (error) =>
           emit(DeleteTranslationErrorState(errorMessage: error.toString())),
       (_) {
-        translations.removeWhere((translation) => translation.id == id);
+        _setTranslations(
+          translations.where((translation) => translation.id != id).toList(),
+        );
         emit(DeleteTranslationSuccessState());
       },
     );

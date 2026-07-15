@@ -27,6 +27,8 @@ class Translations extends StatelessWidget {
           isLoading: isLoading,
           items: isLoading
               ? List.generate(5, (index) => TranslationModel.empty())
+              : isRecent
+              ? cubit.recentTranslations
               : cubit.translations,
         );
       },
@@ -49,10 +51,12 @@ class _List extends StatelessWidget {
     if (items.isEmpty && !isLoading) {
       return LottieCard(isRecent: isRecent);
     }
-    return ListView.builder(
+    return ListView.separated(
       shrinkWrap: true,
       itemCount: items.length,
+      padding: EdgeInsets.zero,
       itemBuilder: (context, index) => _Item(item: items[index]),
+      separatorBuilder: (context, index) => SizedBox(height: 8.h),
       physics: isRecent ? const NeverScrollableScrollPhysics() : null,
     );
   }
@@ -65,7 +69,12 @@ class _Item extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(16.w),
+      padding: EdgeInsetsDirectional.only(
+        start: 14.w,
+        end: 14.w,
+        top: 6.h,
+        bottom: 12.h,
+      ),
       decoration: BoxDecoration(
         color: Theme.of(context).cardColor,
         borderRadius: BorderRadius.circular(8.r),
@@ -74,7 +83,6 @@ class _Item extends StatelessWidget {
         spacing: 8.h,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          SizedBox(height: 8.h),
           _ItemData(value: item.sourceText, isSource: true),
           _ItemData(value: item.translatedText, isSource: false),
         ],

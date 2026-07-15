@@ -14,12 +14,16 @@ class HomeBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
-      child: Column(
-        children: [
-          const _LanguageCard(),
-          const HomeTranslateCard(),
-          const HomeRecentTransactions(),
-        ],
+      child: Padding(
+        padding: EdgeInsets.all(16.w),
+        child: Column(
+          spacing: 12.h,
+          children: [
+            const _LanguageCard(),
+            const HomeTranslateCard(),
+            const HomeRecentTransactions(),
+          ],
+        )
       )
     );
   }
@@ -35,11 +39,11 @@ class _LanguageCard extends StatelessWidget {
         return Skeletonizer(
           enabled: state is GetSupportedLanguagesLoadingState,
           child: Container(
-            margin: EdgeInsets.all(16.w),
+            margin: EdgeInsets.zero,
             padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
             decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(8.0),
+              color: Theme.of(context).cardColor,
+              borderRadius: BorderRadius.circular(8.r),
             ),
             child: _Languages(),
           ),
