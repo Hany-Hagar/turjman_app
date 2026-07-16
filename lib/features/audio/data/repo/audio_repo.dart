@@ -3,9 +3,8 @@ import '../../../../core/services/audio_service.dart';
 
 abstract class AudioRepo {
   Future<Either<Exception, bool>> init();
-  Future<Either<Exception, void>> start({
+
+  Future<Either<Exception, void>> toggle({
     required SpeechResultCallback onResult,
   });
-  Future<Either<Exception, void>> end();
-  Future<Either<Exception, void>> cancel();
 }

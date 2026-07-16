@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import '../../manager/audio_cubit.dart';
 import '../../manager/audio_states.dart';
+import '../../../../../core/utils/styles.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../../core/widgets/custom_text.dart';
+import '../../../../../core/services/icon_broken.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../../core/widgets/custom_languages_drop_menu.dart';
 
@@ -12,12 +14,12 @@ class AudioBodyItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var title = isSource ? "Source Text" : "Target Text";
+    final String title = isSource ? "Source Text" : "Translated Text";
     return BlocBuilder<AudioCubit, AudioStates>(
       builder: (context, state) {
         var theme = Theme.of(context);
         var cubit = AudioCubit.get(context);
-        var value = isSource ? cubit.sourceText : "مرحبا";
+        var value = isSource ? cubit.sourceText : cubit.translateText;
         return Container(
           padding: EdgeInsets.all(12.w),
           decoration: BoxDecoration(
@@ -46,10 +48,25 @@ class _ItemTop extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final Color color = isSource ? Colors.blue : Colors.deepPurple;
+    final IconData icon = isSource ? IconBroken.Voice_2 : IconBroken.Swap;
     return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      spacing: 10.w,
       children: [
-        CustomText(size: 16.sp, text: title, type: Type.overMedium),
+        Container(
+          width: 30.w,
+          height: 30.w,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(5.r),
+            color: color.withValues(alpha: 0.2),
+          ),
+          child: Center(
+            child: Icon(icon, size: 20.sp, color: color),
+          ),
+        ),
+        Expanded(
+          child: CustomText(size: 20.sp, text: title, type: Type.overMedium),
+        ),
         CustomLanguagesDropMenu(isSource: isSource),
       ],
     );
@@ -62,24 +79,28 @@ class _ItemBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CustomText(
-      text: text,
-      size: 16.sp,
-      type: Type.header,
-      color: Colors.black,
-      maxLines: 15
+    var scrollController = ScrollController();
+    return Expanded(
+      child: Container(
+        width: double.infinity,
+        padding: EdgeInsets.all(8.w),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(5.r),
+          color: Colors.grey.withValues(alpha: 0.2),
+        ),
+        child: Scrollbar(
+          child: SingleChildScrollView(
+            controller: scrollController,
+            child: SelectableText(
+              text,
+              style: Styles.textStyle700.copyWith(
+                fontSize: 16.sp,
+                color: Theme.of(context).hintColor,
+              ),
+            ),
+          ),
+        ),
+      ),
     );
-    // return CustomTextFormField(
-    //   maxLines: 5,
-    //   readOnly: true,
-    //   maxAutoLines: 5,
-    //   initialValue: text,
-    //   autoMaxLines: false,
-    //   backgroundColor: Colors.grey[100],
-    //   border: OutlineInputBorder(
-    //     borderRadius: BorderRadius.circular(5.r),
-    //     borderSide: BorderSide(color: Colors.transparent),
-    //   ),
-    // );
   }
 }

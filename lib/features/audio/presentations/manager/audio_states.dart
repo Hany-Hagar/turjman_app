@@ -2,18 +2,26 @@ sealed class AudioStates {}
 
 class AudioInitial extends AudioStates {}
 
-class AudioLoading extends AudioStates {}
+/// Init
+class InitializingAudioLoading extends AudioStates {}
 
-class AudioFailure extends AudioStates {
+class InitializingAudioSuccess extends AudioStates {}
+
+class InitializingAudioFailure extends AudioStates {
   final String errorMessage;
-  AudioFailure({required this.errorMessage});
+  InitializingAudioFailure({required this.errorMessage});
 }
 
-class AudioSuccess extends AudioStates {
+
+/// Listening
+class ListeningAudioLoading extends AudioStates {}
+
+class ListeningAudioSuccess extends AudioStates {
   final String recognizedText;
-  AudioSuccess(this.recognizedText);
+  ListeningAudioSuccess(this.recognizedText);
 }
 
-class StoppedListening extends AudioStates {}
-
-class CancelledListening extends AudioStates {}
+class ListeningAudioFailure extends AudioStates {
+  final String errorMessage;
+  ListeningAudioFailure({required this.errorMessage});
+}
