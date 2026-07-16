@@ -104,7 +104,6 @@ class _Title extends StatelessWidget {
             size: 20.sp,
             height: 0.9,
             type: Type.overMedium,
-            color: Theme.of(context).hintColor,
           )
         ),
         if (subTitle != null) _SubTitle(text: subTitle!),
@@ -122,8 +121,8 @@ class _SubTitle extends StatelessWidget {
     return CustomText(
       text: text,
       size: 14.sp,
-      type: Type.medium,
-      color: Theme.of(context).hintColor,
+      type: Type.overMedium,
+      opacity: FontOpacity.medium, 
     );
   }
 }

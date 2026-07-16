@@ -30,6 +30,7 @@ dependencies:
   flutter_screenutil: ^5.7.0
   smooth_page_indicator: ^2.0.1
   google_mlkit_translation: ^0.13.1
+  country_flags: ^4.1.2
 
 dev_dependencies:
   flutter_test:

@@ -12,6 +12,7 @@ import 'package:hydrated_bloc/hydrated_bloc.dart';
 import 'features/settings/models/app_user_pref.dart';
 import 'features/home/presentation/manager/home_cubit.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'features/audio/presentations/manager/audio_cubit.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'features/settings/presentation/manager/settings_cubit.dart';
 import 'features/translations/presentation/manager/translations_cubit.dart';
@@ -42,7 +43,10 @@ class MyApp extends StatelessWidget {
         BlocProvider(create: (context) => getIt<HomeCubit>()),
 
         // TranslationsCubit
-        BlocProvider(create: (context) => getIt<TranslationsCubit>()..fetchTranslations()),
+        BlocProvider(create: (context) => getIt<TranslationsCubit>()),
+
+        // AudioCubit
+        BlocProvider(create: (context) => getIt<AudioCubit>()),
 
       ],
       child: BlocBuilder<SettingsCubit, AppUserPref>(

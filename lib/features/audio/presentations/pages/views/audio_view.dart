@@ -14,8 +14,8 @@ class AudioView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => getIt<AudioCubit>(),
+    return BlocProvider.value(
+      value: getIt<AudioCubit>()..initialize(),
       child: CustomBackground(
         top: _Top(),
         body: Padding(
@@ -34,8 +34,7 @@ class _Top extends StatelessWidget {
   Widget build(BuildContext context) {
     return CustomAppBar(
       title: "Audio Translation",
-      subTitle: "Speak into your device to get the translation of your text",
-
+      subTitle: "Speak to translate in real time",
     );
   }
 }

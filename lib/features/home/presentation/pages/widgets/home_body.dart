@@ -1,3 +1,5 @@
+
+import '../../../../../core/services/icon_broken.dart';
 import 'home_translate_card.dart';
 import '../../manager/home_cubit.dart';
 import 'home_recent_transactions.dart';
@@ -6,7 +8,7 @@ import '../../manager/home_states.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:skeletonizer/skeletonizer.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../../../../../core/widgets/custom_drop_down_menu.dart';
+import '../../../../../core/widgets/custom_languages_drop_menu.dart';
 
 class HomeBody extends StatelessWidget {
   const HomeBody({super.key});
@@ -23,8 +25,8 @@ class HomeBody extends StatelessWidget {
             const HomeTranslateCard(),
             const HomeRecentTransactions(),
           ],
-        )
-      )
+        ),
+      ),
     );
   }
 }
@@ -45,7 +47,18 @@ class _LanguageCard extends StatelessWidget {
               color: Theme.of(context).cardColor,
               borderRadius: BorderRadius.circular(8.r),
             ),
-            child: _Languages(),
+            child: Row(
+              spacing: 8.w,
+              children: [
+                Expanded(
+                  child: CustomLanguagesDropMenu(isSource: true),
+                ),
+                const _Swap(),
+                Expanded(
+                  child: CustomLanguagesDropMenu(isSource: false),
+                ),
+              ],
+            ),
           ),
         );
       },
@@ -53,52 +66,6 @@ class _LanguageCard extends StatelessWidget {
   }
 }
 
-class _Languages extends StatelessWidget {
-  const _Languages();
-
-  @override
-  Widget build(BuildContext context) {
-    final cubit = HomeCubit.get(context);
-    return Row(
-      children: [
-        _LanguageItem(
-          languages: cubit.sourceLanguages,
-          selectedLanguage: cubit.selectedSourceLanguage,
-          onChanged: (language) => cubit.changeSourceLanguage(language),
-        ),
-        const _Swap(),
-        _LanguageItem(
-          languages: cubit.targetLanguages,
-          selectedLanguage: cubit.selectedTargetLanguage,
-          onChanged: (language) => cubit.changeTargetLanguage(language),
-        ),
-      ],
-    );
-  }
-}
-
-class _LanguageItem extends StatelessWidget {
-  final List<String> languages;
-  final String selectedLanguage;
-  final Function(String?) onChanged;
-  const _LanguageItem({
-    required this.languages,
-    required this.selectedLanguage,
-    required this.onChanged,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Expanded(
-      child: CustomDropDownMenu(
-        value: selectedLanguage,
-        items: languages,
-        hintText: 'Select Language',
-        onChanged: onChanged,
-      ),
-    );
-  }
-}
 
 class _Swap extends StatelessWidget {
   const _Swap();
@@ -110,10 +77,13 @@ class _Swap extends StatelessWidget {
       child: CircleAvatar(
         radius: 20.r,
         backgroundColor: Theme.of(context).primaryColor,
-        child: Icon(
-          Icons.swap_horiz,
-          size: 24.sp,
-          color: Theme.of(context).scaffoldBackgroundColor,
+        child: Transform.rotate(
+          angle: 90 * 3.14 / 180,
+          child: Icon(
+            IconBroken.Swap,
+            size: 24.sp,
+            color: Theme.of(context).scaffoldBackgroundColor,
+          )
         ),
       ),
     );

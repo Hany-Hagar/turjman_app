@@ -9,12 +9,19 @@ class AudioCubit extends Cubit<AudioStates> {
   static AudioCubit get(BuildContext context) => BlocProvider.of(context);
 
   bool isListening = false;
+  bool isInitialized = false;
   String sourceText = '';
+  String translateText = '';
 
-  void initialize() {
+  Future<void> initialize() async {
     isListening = false;
     sourceText = '';
-    emit(AudioInitial());
+    translateText = '';
+    final result = await audioRepo.init();
+    result.fold(
+      (exception) => emit(AudioFailure(errorMessage: exception.toString())),
+      (_) => emit(AudioInitial()),
+    );
   }
 
   Future<void> startListening() async {
@@ -24,6 +31,7 @@ class AudioCubit extends Cubit<AudioStates> {
       onResult: (recognizedText, isFinal) {
         sourceText = recognizedText;
         emit(AudioSuccess(recognizedText));
+
         if (isFinal) isListening = false;
       },
     );

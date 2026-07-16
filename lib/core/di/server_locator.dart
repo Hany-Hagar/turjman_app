@@ -42,7 +42,7 @@ void setupLocator() {
   );
 
   getIt.registerLazySingleton<TranslationsCubit>(
-    () => TranslationsCubit(translationsRepo: getIt<TranslationsRepo>()),
+    () => TranslationsCubit(translationsRepo: getIt<TranslationsRepo>())..fetchTranslations(),
   );
 
   // Audio
@@ -56,7 +56,7 @@ void setupLocator() {
     () => AudioRepoImpl(audioData: getIt<AudioData>()),
   );
 
-  getIt.registerFactory<AudioCubit>(
+  getIt.registerLazySingleton<AudioCubit>(
     () => AudioCubit(audioRepo: getIt<AudioRepo>()),
   );
 }
