@@ -147,17 +147,17 @@ class _Actions extends StatelessWidget {
         children: [
           Expanded(
             child: _ActionItem(
-              color: Colors.blue,
-              icon: IconBroken.Image,
-              text: S.of(context).image,
+              color: Colors.green,
+              icon: IconBroken.Camera,
+              text: S.of(context).camera,
               onPressed: () {},
             ),
           ),
           Expanded(
             child: _ActionItem(
-              color: Colors.green,
-              icon: IconBroken.Camera,
-              text: S.of(context).camera,
+              color: Colors.blue,
+              icon: IconBroken.Image,
+              text: S.of(context).image,
               onPressed: () {},
             ),
           ),
