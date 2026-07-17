@@ -1,15 +1,12 @@
-import 'package:dartz/dartz.dart';
-
-import '../../../../core/services/audio_service.dart';
-import '../database/audio_data.dart';
 import 'audio_repo.dart';
+import 'package:dartz/dartz.dart';
+import '../database/audio_data.dart';
+import 'package:google_mlkit_translation/google_mlkit_translation.dart';
 
 class AudioRepoImpl implements AudioRepo {
   final AudioData audioData;
 
-  AudioRepoImpl({
-    required this.audioData,
-  });
+  AudioRepoImpl({required this.audioData});
 
   @override
   Future<Either<Exception, bool>> init() async {
@@ -17,25 +14,31 @@ class AudioRepoImpl implements AudioRepo {
       final result = await audioData.init();
       return Right(result);
     } catch (e) {
-      return Left(
-        Exception('Failed to initialize audio service: $e'),
-      );
+      return Left(Exception('Failed to initialize audio service: $e'));
     }
   }
 
   @override
   Future<Either<Exception, void>> toggle({
-    required SpeechResultCallback onResult,
+    required TranslateLanguage source,
+    required TranslateLanguage target,
+    required void Function(
+      String sourceText,
+      String translatedText,
+      bool isFinal,
+    )
+    onResult,
   }) async {
     try {
       await audioData.toggle(
+        source: source,
+        target: target,
         onResult: onResult,
       );
+
       return const Right(null);
     } catch (e) {
-      return Left(
-        Exception('Failed to toggle listening: $e'),
-      );
+      return Left(Exception('Failed to toggle listening: $e'));
     }
   }
 }

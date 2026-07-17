@@ -12,13 +12,13 @@ class InitializingAudioFailure extends AudioStates {
   InitializingAudioFailure({required this.errorMessage});
 }
 
-
 /// Listening
 class ListeningAudioLoading extends AudioStates {}
 
-class ListeningAudioSuccess extends AudioStates {
-  final String recognizedText;
-  ListeningAudioSuccess(this.recognizedText);
+class ListeningAudio extends AudioStates {
+  final String sourceText;
+  final String translatedText;
+  ListeningAudio({required this.sourceText, required this.translatedText});
 }
 
 class ListeningAudioFailure extends AudioStates {

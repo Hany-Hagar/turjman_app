@@ -2,6 +2,9 @@ import 'audio_states.dart';
 import 'package:flutter/material.dart';
 import '../../data/repo/audio_repo.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import '../../../../core/di/server_locator.dart';
+import '../../../home/presentation/manager/home_cubit.dart';
+import '../../../../core/extension/translate_language_extension.dart';
 
 class AudioCubit extends Cubit<AudioStates> {
   final AudioRepo audioRepo;
@@ -27,16 +30,24 @@ class AudioCubit extends Cubit<AudioStates> {
 
   Future<void> toggleListening() async {
     isListening = !isListening;
+
     emit(ListeningAudioLoading());
+
     final result = await audioRepo.toggle(
-      onResult: (recognizedText, isFinal) {
-        sourceText = recognizedText;
-        emit(ListeningAudioSuccess(recognizedText));
-        if (isFinal) isListening = false;
+      source: getIt<HomeCubit>().selectedSourceLanguage.toTranslateLanguage,
+      target: getIt<HomeCubit>().selectedTargetLanguage.toTranslateLanguage,
+      onResult: (source, translated, isFinal) {
+        sourceText = source;
+        translateText = translated;
+        emit(ListeningAudio(sourceText: source, translatedText: translated));
+        if (isFinal) {
+          isListening = false;
+        }
       },
     );
+
     result.fold((exception) {
-      isListening = !isListening;
+      isListening = false;
       emit(ListeningAudioFailure(errorMessage: exception.toString()));
     }, (_) {});
   }
