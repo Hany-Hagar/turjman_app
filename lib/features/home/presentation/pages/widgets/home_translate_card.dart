@@ -1,6 +1,7 @@
-// ignore_for_file: unused_element_parameter
 
+import '../../manager/home_cubit.dart';
 import 'package:flutter/material.dart';
+import '../../manager/home_states.dart';
 import '../../../../../generated/l10n.dart';
 import '../../../../../core/utils/nav_to.dart';
 import '../../../../../core/utils/styles.dart';
@@ -11,8 +12,7 @@ import '../../../../../core/services/icon_broken.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../../core/widgets/custom_text_form_field.dart';
 import '../../../../audio/presentations/pages/views/audio_view.dart';
-import '../../manager/home_cubit.dart';
-import '../../manager/home_states.dart';
+import '../../../../image/presentations/pages/views/image_view.dart';
 
 class HomeTranslateCard extends StatelessWidget {
   const HomeTranslateCard({super.key});
@@ -147,18 +147,11 @@ class _Actions extends StatelessWidget {
         children: [
           Expanded(
             child: _ActionItem(
-              color: Colors.green,
-              icon: IconBroken.Camera,
-              text: S.of(context).camera,
-              onPressed: () {},
-            ),
-          ),
-          Expanded(
-            child: _ActionItem(
               color: Colors.blue,
               icon: IconBroken.Image,
               text: S.of(context).image,
-              onPressed: () {},
+              onPressed: () =>
+                  NavTo.push(context: context, nextPage: const ImageView()),
             ),
           ),
           Expanded(
