@@ -13,8 +13,8 @@ class HomeCubit extends Cubit<HomeStates> {
   HomeCubit({required this.homeRepo}) : super(HomeInitial());
   static HomeCubit get(BuildContext context) => BlocProvider.of(context);
 
-  var selectedSourceLanguage = '';
-  var selectedTargetLanguage = '';
+  String selectedSourceLanguage = '';
+  String selectedTargetLanguage = '';
   List<String> sourceLanguages = [];
   List<String> targetLanguages = [];
 
@@ -85,14 +85,12 @@ class HomeCubit extends Cubit<HomeStates> {
         log('Translated Text: $translatedText');
         targetText = translatedText;
         getIt<TranslationsCubit>().addTranslation(
-          TranslationModel(
-            id: DateTime.now().millisecondsSinceEpoch.toString(),
+          translation: TranslationModel.newTranslation(
+            source: selectedSourceLanguage,
+            target: selectedTargetLanguage,
             sourceText: text,
-            createdAt: DateTime.now(),
             translatedText: translatedText,
-            sourceLanguage: selectedSourceLanguage,
-            targetLanguage: selectedTargetLanguage,
-            translationType: TranslationType.text
+            translationType: TranslationType.text,
           ),
         );
         emit(TranslateTextSuccessState());

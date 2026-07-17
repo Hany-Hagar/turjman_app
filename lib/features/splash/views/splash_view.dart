@@ -28,7 +28,7 @@ class _SplashViewState extends State<SplashView> {
     final isFirstTimeUser = getIt<SettingsCubit>().state.isFirstTime;
 
     if (isFirstTimeUser) {
-      NavTo.push(context: context, nextPage: OnBoardingView());
+      NavTo.pushReplacement(context: context, nextPage: OnBoardingView());
     } else {
       NavTo.push(context: context, nextPage: HomeView());
     }

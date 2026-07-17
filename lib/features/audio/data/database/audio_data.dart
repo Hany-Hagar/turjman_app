@@ -1,7 +1,7 @@
-import 'package:google_mlkit_translation/google_mlkit_translation.dart';
 
 import '../../../../core/services/audio_service.dart';
 import '../../../../core/services/translation_service.dart';
+import 'package:google_mlkit_translation/google_mlkit_translation.dart';
 
 class AudioData {
   final AudioService audioService;

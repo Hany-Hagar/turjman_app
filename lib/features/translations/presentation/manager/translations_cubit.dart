@@ -34,7 +34,7 @@ class TranslationsCubit extends Cubit<TranslationsStates> {
     );
   }
 
-  Future<void> addTranslation(TranslationModel translation) async {
+  Future<void> addTranslation({required TranslationModel translation}) async {
     emit(AddTranslationLoadingState());
     final result = await translationsRepo.addTranslation(translation);
     result.fold(
