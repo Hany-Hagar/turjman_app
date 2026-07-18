@@ -12,6 +12,7 @@ import 'package:hydrated_bloc/hydrated_bloc.dart';
 import 'features/settings/models/app_user_pref.dart';
 import 'features/home/presentation/manager/home_cubit.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'features/image/presentations/manager/image_cubit.dart';
 import 'features/audio/presentations/manager/audio_cubit.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'features/settings/presentation/manager/settings_cubit.dart';
@@ -47,6 +48,10 @@ class MyApp extends StatelessWidget {
 
         // AudioCubit
         BlocProvider(create: (context) => getIt<AudioCubit>()),
+
+        // ImageCubit
+        BlocProvider(create: (context) => getIt<ImageCubit>()),
+
 
       ],
       child: BlocBuilder<SettingsCubit, AppUserPref>(

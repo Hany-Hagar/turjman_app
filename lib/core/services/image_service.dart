@@ -3,9 +3,9 @@ import 'dart:ui' as ui;
 import 'package:flutter/material.dart';
 import 'package:google_mlkit_text_recognition/google_mlkit_text_recognition.dart';
 
-class OcrService {
-  OcrService._();
-  static final OcrService instance = OcrService._();
+class ImageService {
+  ImageService._();
+  static final ImageService instance = ImageService._();
   final TextRecognizer _recognizer = TextRecognizer();
   Future<OcrResult> processImage(File imageFile) async {
     final inputImage = InputImage.fromFile(imageFile);

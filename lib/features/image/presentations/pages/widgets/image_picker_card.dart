@@ -5,6 +5,8 @@ import '../../../../../core/services/icon_broken.dart';
 import '../../../../../core/widgets/custom_button.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../manager/image_cubit.dart';
+
 class ImagePickerCard extends StatelessWidget {
   const ImagePickerCard({super.key});
 
@@ -74,17 +76,18 @@ class _PickerButtons extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var cubit = ImageCubit.get(context);
     return Column(
       spacing: 12.h,
       children: [
         CustomButton(
-          onPressed: () {},
+          onPressed: () => cubit.pickImage(fromCamera: false),
           icon: IconBroken.Image,
           label: "Choose from Gallery",
         ),
         CustomButton(
           isOutlined: true,
-          onPressed: () {},
+          onPressed: () => cubit.pickImage(fromCamera: true),
           icon: IconBroken.Camera,
           label: "Take a Photo",
         ),

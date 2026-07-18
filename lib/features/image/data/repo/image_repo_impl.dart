@@ -2,7 +2,7 @@ import 'dart:io';
 import 'image_repo.dart';
 import 'package:dartz/dartz.dart';
 import '../database/image_data.dart';
-import '../../../../core/services/ocr_service.dart';
+import '../../../../core/services/image_service.dart';
 
 class ImageRepoImpl extends ImageRepo {
   final ImageData imageData;
@@ -10,9 +10,11 @@ class ImageRepoImpl extends ImageRepo {
   ImageRepoImpl({required this.imageData});
 
   @override
-  Future<Either<Exception, File?>> pickImageFromGallery() async {
+  Future<Either<Exception, File?>> pickImage({required bool fromCamera}) async {
     try {
-      final File? imageFile = await imageData.pickImageFromGallery();
+      final File? imageFile = fromCamera
+          ? await imageData.pickImageFromCamera()
+          : await imageData.pickImageFromGallery();
       return Right(imageFile);
     } catch (e) {
       return Left(Exception('Failed to pick image: $e'));

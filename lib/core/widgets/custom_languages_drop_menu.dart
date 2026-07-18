@@ -18,10 +18,10 @@ class CustomLanguagesDropMenu extends StatelessWidget {
       builder: (context, state) {
         var cubit = HomeCubit.get(context);
         return Container(
-          padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 5.h),
+          padding: EdgeInsets.symmetric(horizontal: 2.w, vertical: 5.h),
           decoration: BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.circular(100.r),
+            color: Theme.of(context).cardColor,
+            borderRadius: BorderRadius.circular(4.r),
             border: Border.all(color: const Color(0xffE8E8F2)),
           ),
           child: Center(
@@ -66,6 +66,7 @@ class _DropDownMenu extends StatelessWidget {
         spacing: 4.w,
         mainAxisSize: MainAxisSize.min,
         children: [
+          SizedBox(width: 4.w),
           CountryFlag.fromCountryCode(
             languageToCountry[value] ?? 'UN',
             theme: ImageTheme(
