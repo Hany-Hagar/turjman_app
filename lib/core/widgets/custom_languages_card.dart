@@ -8,7 +8,8 @@ import '../../features/home/presentation/manager/home_cubit.dart';
 import '../../features/home/presentation/manager/home_states.dart';
 
 class CustomLanguagesCard extends StatelessWidget {
-  const CustomLanguagesCard({super.key});
+  final EdgeInsetsGeometry? padding;
+  const CustomLanguagesCard({super.key, this.padding});
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +19,7 @@ class CustomLanguagesCard extends StatelessWidget {
           enabled: state is GetSupportedLanguagesLoadingState,
           child: Container(
             margin: EdgeInsets.zero,
-            padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 8.h),
+            padding: padding ?? EdgeInsets.symmetric(horizontal: 12.w, vertical: 8.h),
             decoration: BoxDecoration(
               color: Theme.of(context).cardColor,
               borderRadius: BorderRadius.circular(8.r),

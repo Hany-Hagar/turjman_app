@@ -75,6 +75,7 @@ class _DropDownMenu extends StatelessWidget {
               shape: Circle(),
             ),
           ),
+          SizedBox(width: 1.w),
           Flexible(
             child: _text(text: value ?? "Select")
           ),

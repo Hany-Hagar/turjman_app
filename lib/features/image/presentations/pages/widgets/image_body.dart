@@ -1,12 +1,10 @@
 import 'dart:io';
-
-import 'package:flutter_bloc/flutter_bloc.dart';
-
-import '../../../../../core/widgets/custom_languages_card.dart';
-import '../../manager/image_cubit.dart';
-import '../../manager/image_states.dart';
 import 'image_picker_card.dart';
 import 'package:flutter/material.dart';
+import '../../manager/image_cubit.dart';
+import '../../manager/image_states.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ImageBody extends StatelessWidget {
   const ImageBody({super.key});
@@ -17,7 +15,12 @@ class ImageBody extends StatelessWidget {
       builder: (context, state) {
         var cubit = ImageCubit.get(context);
         if (cubit.selectedImage != null) {
-          return _Image(image: cubit.selectedImage!);
+          return Center(
+            child: _Image(
+              image: cubit.selectedImage!,
+              isLoading: state is ImageProcessingLoading,
+            )
+          );
         }
         return ImagePickerCard();
       },
@@ -26,17 +29,19 @@ class ImageBody extends StatelessWidget {
 }
 
 class _Image extends StatelessWidget {
+  final bool isLoading;
   final File image;
-  const _Image({required this.image});
+  const _Image({required this.isLoading, required this.image});
 
   @override
   Widget build(BuildContext context) {
     return Stack(
-      alignment: Alignment.topCenter,
+      alignment: Alignment.center,
       children: [
-        CustomLanguagesCard(),
-        Image.file(image, width: double.infinity)
-      ]
+        Image.file(image, width: double.infinity, fit: BoxFit.contain),
+        if (isLoading)
+          SizedBox(width: 30.w, child: CircularProgressIndicator()),
+      ],
     );
   }
 }

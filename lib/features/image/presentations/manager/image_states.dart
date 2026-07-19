@@ -1,4 +1,3 @@
-import '../../../../core/services/image_service.dart';
 
 sealed class ImageStates {}
 
@@ -21,6 +20,6 @@ class ImagePickingSuccess extends ImageStates {
 class ImageProcessingLoading extends ImageStates {}
 
 class ImageProcessingSuccess extends ImageStates {
-  final OcrResult result;
+  final ({String text, String translatedText}) result;
   ImageProcessingSuccess({required this.result});
 }

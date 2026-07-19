@@ -1,10 +1,14 @@
-
 import 'dart:io';
 import 'image_states.dart';
 import 'package:flutter/material.dart';
 import '../../data/repo/image_repo.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../../../../core/services/image_service.dart';
+import '../../../../core/di/server_locator.dart';
+import '../../../../core/enum/translation_type.dart';
+import '../../../home/presentation/manager/home_cubit.dart';
+import '../../../translations/data/models/translation_model.dart';
+import '../../../../core/extension/translate_language_extension.dart';
+import '../../../translations/presentation/manager/translations_cubit.dart';
 
 class ImageCubit extends Cubit<ImageStates> {
   final ImageRepo imageRepo;
@@ -12,9 +16,9 @@ class ImageCubit extends Cubit<ImageStates> {
   static ImageCubit get(BuildContext context) => BlocProvider.of(context);
 
   File? selectedImage;
-  OcrResult? result;
-  
-  void init(){
+  String? result;
+
+  void init() {
     selectedImage = null;
     result = null;
     emit(ImageInitial());
@@ -29,6 +33,7 @@ class ImageCubit extends Cubit<ImageStates> {
         if (imageFile != null) {
           selectedImage = imageFile;
           emit(ImagePickingSuccess(imagePath: imageFile.path));
+          processImage(fromCamera: fromCamera, imageFile: imageFile);
         } else {
           emit(ImageFailure(message: 'No image selected.'));
         }
@@ -36,12 +41,34 @@ class ImageCubit extends Cubit<ImageStates> {
     );
   }
 
-  Future<void> processImage(File imageFile) async {
+  Future<void> processImage({
+    required bool fromCamera,
+    required File imageFile,
+  }) async {
     emit(ImageProcessingLoading());
-    final result = await imageRepo.processImage(imageFile);
+    var sourceLang = getIt<HomeCubit>().selectedSourceLanguage;
+    var targetLang = getIt<HomeCubit>().selectedTargetLanguage;
+    final result = await imageRepo.processImage(
+      imageFile: imageFile,
+      sourceLanguage: sourceLang.toTranslateLanguage,
+      targetLanguage: targetLang.toTranslateLanguage,
+    );
     result.fold(
       (exception) => emit(ImageFailure(message: exception.toString())),
-      (ocrResult) => emit(ImageProcessingSuccess(result: ocrResult)),
+      (ocrResult) {
+        emit(ImageProcessingSuccess(result: ocrResult));
+        getIt<TranslationsCubit>().addTranslation(
+          translation: TranslationModel.newTranslation(
+            source: sourceLang,
+            target: targetLang,
+            sourceText: ocrResult.text,
+            translatedText: ocrResult.translatedText,
+            translationType: fromCamera
+                ? TranslationType.camera
+                : TranslationType.image,
+          ),
+        );
+      },
     );
   }
 }
