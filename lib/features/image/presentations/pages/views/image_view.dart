@@ -1,14 +1,15 @@
+import '../widgets/image_card.dart';
 import '../widgets/image_body.dart';
 import 'package:flutter/material.dart';
 import '../../manager/image_cubit.dart';
 import '../../manager/image_states.dart';
+import '../../../../../generated/l10n.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../../core/di/server_locator.dart';
 import '../../../../../core/widgets/custom_app_bar.dart';
 import '../../../../../core/widgets/custom_background.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../../core/widgets/custom_languages_card.dart';
-import '../widgets/image_card.dart';
 
 class ImageView extends StatelessWidget {
   const ImageView({super.key});
@@ -50,9 +51,10 @@ class _Top extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var s = S.of(context);
     return CustomAppBar(
-      title: 'Image to Text',
-      subTitle: "Convert images to text using OCR technology.",
+      title: s.imageTitle,
+      subTitle: s.imageSubtitle,
       bottom: CustomLanguagesCard(padding: EdgeInsets.zero),
     );
   }
@@ -65,6 +67,7 @@ class _Bottom extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var s = S.of(context);
     return SingleChildScrollView(
       child: Padding(
         padding: EdgeInsets.all(16.h),
@@ -73,10 +76,10 @@ class _Bottom extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            ImageCard(title: "Source", value: extractedText, isSource: true),
+            ImageCard(title: s.source, value: extractedText, isSource: true),
             SizedBox(height: 10.h),
             ImageCard(
-              title: "Translated",
+              title: s.translation,
               value: translatedText,
               isSource: false,
             ),

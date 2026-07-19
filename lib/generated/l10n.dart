@@ -249,6 +249,86 @@ class S {
       args: [],
     );
   }
+
+  /// `Image to Text`
+  String get imageTitle {
+    return Intl.message(
+      'Image to Text',
+      name: 'imageTitle',
+      desc: 'The title for the image',
+      args: [],
+    );
+  }
+
+  /// `Select an image to extract text from`
+  String get imageSubtitle {
+    return Intl.message(
+      'Select an image to extract text from',
+      name: 'imageSubtitle',
+      desc: 'The subtitle for the image',
+      args: [],
+    );
+  }
+
+  /// `Select an image`
+  String get selectAnImage {
+    return Intl.message(
+      'Select an image',
+      name: 'selectAnImage',
+      desc: 'The label for selecting an image',
+      args: [],
+    );
+  }
+
+  /// `Choose an image from your gallery\nor capture a new one to extract text.`
+  String get selectAnImageHint {
+    return Intl.message(
+      'Choose an image from your gallery\nor capture a new one to extract text.',
+      name: 'selectAnImageHint',
+      desc: 'The hint text for selecting an image',
+      args: [],
+    );
+  }
+
+  /// `Choose from Gallery`
+  String get chooseFromGallery {
+    return Intl.message(
+      'Choose from Gallery',
+      name: 'chooseFromGallery',
+      desc: 'The label for choosing an image from the gallery',
+      args: [],
+    );
+  }
+
+  /// `Capture with Camera`
+  String get captureWithCamera {
+    return Intl.message(
+      'Capture with Camera',
+      name: 'captureWithCamera',
+      desc: 'The label for capturing an image with the camera',
+      args: [],
+    );
+  }
+
+  /// `OR`
+  String get or {
+    return Intl.message(
+      'OR',
+      name: 'or',
+      desc: 'The label for \'or\' between two options',
+      args: [],
+    );
+  }
+
+  /// `Supported formats: JPG, PNG, GIF`
+  String get supportedFormats {
+    return Intl.message(
+      'Supported formats: JPG, PNG, GIF',
+      name: 'supportedFormats',
+      desc: 'The label for supported image formats',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

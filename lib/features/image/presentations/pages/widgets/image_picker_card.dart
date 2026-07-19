@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
+import '../../manager/image_cubit.dart';
+import '../../../../../generated/l10n.dart';
 import 'package:dotted_border/dotted_border.dart';
 import '../../../../../core/widgets/custom_text.dart';
 import '../../../../../core/services/icon_broken.dart';
 import '../../../../../core/widgets/custom_button.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
-import '../../manager/image_cubit.dart';
 
 class ImagePickerCard extends StatelessWidget {
   const ImagePickerCard({super.key});
@@ -55,13 +55,13 @@ class _Text extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var s = S.of(context);
     return Column(
       spacing: 2.h,
       children: [
-        CustomText(text: "Select an image", size: 22.sp, type: Type.overMedium),
+        CustomText(text: s.selectAnImage, size: 22.sp, type: Type.overMedium),
         CustomText(
-          text:
-              "Choose an image from your gallery\nor capture a new one to extract text.",
+          text: s.selectAnImageHint,
           size: 16.sp,
           textAlign: TextAlign.center,
           opacity: FontOpacity.overLow,
@@ -76,6 +76,7 @@ class _PickerButtons extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var s = S.of(context);
     var cubit = ImageCubit.get(context);
     return Column(
       spacing: 12.h,
@@ -83,13 +84,13 @@ class _PickerButtons extends StatelessWidget {
         CustomButton(
           onPressed: () => cubit.pickImage(fromCamera: false),
           icon: IconBroken.Image,
-          label: "Choose from Gallery",
+          label: s.chooseFromGallery,
         ),
         CustomButton(
           isOutlined: true,
           onPressed: () => cubit.pickImage(fromCamera: true),
           icon: IconBroken.Camera,
-          label: "Take a Photo",
+          label: s.captureWithCamera,
         ),
       ],
     );
@@ -101,6 +102,7 @@ class _SupportExtensions extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var s = S.of(context);
     return Column(
       children: [
         SizedBox(width: double.infinity, height: 12.h),
@@ -108,13 +110,13 @@ class _SupportExtensions extends StatelessWidget {
           spacing: 12.w,
           children: [
             const Expanded(child: Divider()),
-            CustomText(text: "OR", size: 14.sp, opacity: FontOpacity.overLow),
+            CustomText(text: s.or, size: 14.sp, opacity: FontOpacity.overLow),
             const Expanded(child: Divider()),
           ],
         ),
         SizedBox(width: double.infinity, height: 12.h),
         CustomText(
-          text: "Supported formats: JPG, PNG, JPEG",
+          text: s.supportedFormats,
           size: 14.sp,
           type: Type.medium,
           opacity: FontOpacity.overLow,

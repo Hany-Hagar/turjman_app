@@ -94,5 +94,40 @@
     "translationTitle":"Translation",
     "@translationTitle": {
         "description": "The title for the translation"
+    },
+
+
+
+    "imageTitle":"Image to Text",
+    "@imageTitle": {
+        "description": "The title for the image"
+    },
+    "imageSubtitle":"Select an image to extract text from",
+    "@imageSubtitle": {
+        "description": "The subtitle for the image"
+    },
+    "selectAnImage":"Select an image",
+    "@selectAnImage": {
+        "description": "The label for selecting an image"
+    },
+    "selectAnImageHint":"Choose an image from your gallery\nor capture a new one to extract text.",
+    "@selectAnImageHint": {
+        "description": "The hint text for selecting an image"
+    },
+    "chooseFromGallery":"Choose from Gallery",
+    "@chooseFromGallery": {
+        "description": "The label for choosing an image from the gallery"
+    },
+    "captureWithCamera":"Capture with Camera",
+    "@captureWithCamera": {
+        "description": "The label for capturing an image with the camera"
+    },
+    "or":"OR",
+    "@or": {
+        "description": "The label for 'or' between two options"
+    },
+    "supportedFormats":"Supported formats: JPG, PNG, GIF",
+    "@supportedFormats": {
+        "description": "The label for supported image formats"
     }
 }

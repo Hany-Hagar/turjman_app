@@ -94,5 +94,40 @@
     "translationTitle":"الترجمة",
     "@translationTitle": {
         "description": "نص التسمية لعنوان الترجمة"
+    },
+
+
+
+    "imageTitle":"صورة إلى نص",
+    "@imageTitle": {
+        "description": "نص التسمية لعنوان الصورة"
+    },
+    "imageSubtitle":"اختر صورة لاستخراج النص منها",
+    "@imageSubtitle": {
+        "description": "نص التسمية للعنوان الفرعي للصورة"
+    },
+    "selectAnImage":"اختر صورة",
+    "@selectAnImage": {
+        "description": "نص التسمية لتحديد صورة"
+    },
+    "selectAnImageHint":"اختر صورة من معرضك\nأو قم بتصوير واحدة جديدة لاستخراج النص.",
+    "@selectAnImageHint": {
+        "description": "نص التلميح لتحديد صورة"
+    },
+    "chooseFromGallery":"اختر من المعرض",
+    "@chooseFromGallery": {
+        "description": "نص التسمية لاختيار صورة من المعرض"
+    },
+    "captureWithCamera":"التقاط بالكاميرا",
+    "@captureWithCamera": {
+        "description": "نص التسمية لالتقاط صورة بالكاميرا"
+    },
+    "or":"أو",
+    "@or": {
+        "description": "نص التسمية لـ 'أو' بين خيارين"
+    },
+    "supportedFormats":" الصيغ المدعومة: JPG, PNG, GIF",
+    "@supportedFormats": {
+        "description": "نص التسمية للصيغ المدعومة للصور"
     }
 }
