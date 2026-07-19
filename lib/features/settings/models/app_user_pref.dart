@@ -6,21 +6,27 @@ class AppUserPref {
   final ThemeMode theme;
   final bool isFirstTime;
   final bool notificationsEnabled;
+  final String sourceLanguage;
+  final String targetLanguage;
   AppUserPref({
     required this.lang,
     required this.langIndex,
     required this.theme,
     required this.isFirstTime,
     required this.notificationsEnabled,
+    required this.sourceLanguage,
+    required this.targetLanguage,
   });
 
   factory AppUserPref.standard() {
     return AppUserPref(
       lang: "en",
       langIndex: 0,
-      theme: ThemeMode.light,
       isFirstTime: true,
+      theme: ThemeMode.light,
       notificationsEnabled: true,
+      sourceLanguage: "english",
+      targetLanguage: "arabic"
     );
   }
 
@@ -31,13 +37,17 @@ class AppUserPref {
     bool? isFirstTime,
     bool? notificationsEnabled,
     bool? vibrationEnabled,
+    String? sourceLanguage,
+    String? targetLanguage,
   }) {
     return AppUserPref(
       lang: lang ?? this.lang,
-      langIndex: langIndex ?? this.langIndex,
       theme: theme ?? this.theme,
+      langIndex: langIndex ?? this.langIndex,
       isFirstTime: isFirstTime ?? this.isFirstTime,
       notificationsEnabled: notificationsEnabled ?? this.notificationsEnabled,
+      sourceLanguage: sourceLanguage ?? this.sourceLanguage,
+      targetLanguage: targetLanguage ?? this.targetLanguage,
     );
   }
 
@@ -47,6 +57,8 @@ class AppUserPref {
       langIndex: json['langIndex'] as int? ?? 0,
       theme: ThemeMode.values[json['theme'] as int],
       isFirstTime: json['isFirstTime'] as bool? ?? true,
+      targetLanguage: json['targetLanguage'] as String? ?? "arabic",
+      sourceLanguage: json['sourceLanguage'] as String? ?? "english",
       notificationsEnabled: json['notificationsEnabled'] as bool? ?? true,
     );
   }
@@ -57,7 +69,9 @@ class AppUserPref {
       'langIndex': langIndex,
       'theme': theme.index,
       'isFirstTime': isFirstTime,
-      'notificationsEnabled': notificationsEnabled
+      'notificationsEnabled': notificationsEnabled,
+      'sourceLanguage': sourceLanguage,
+      'targetLanguage': targetLanguage,
     };
   }
 }

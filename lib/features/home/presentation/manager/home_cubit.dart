@@ -1,4 +1,4 @@
-import 'dart:developer';
+import '../../../settings/presentation/manager/settings_cubit.dart';
 import 'home_states.dart';
 import 'package:flutter/material.dart';
 import '../../data/repo/home_repo.dart';
@@ -29,8 +29,8 @@ class HomeCubit extends Cubit<HomeStates> {
         sourceLanguages = languages;
         targetLanguages = languages;
         if (languages.isNotEmpty) {
-          selectedSourceLanguage = languages.first;
-          selectedTargetLanguage = languages.last;
+          selectedSourceLanguage = getIt<SettingsCubit>().state.sourceLanguage;
+          selectedTargetLanguage = getIt<SettingsCubit>().state.targetLanguage;
         }
         emit(GetSupportedLanguagesSuccessState());
       },
@@ -40,12 +40,14 @@ class HomeCubit extends Cubit<HomeStates> {
   void changeSourceLanguage(String? language) {
     if (language == null) return;
     selectedSourceLanguage = language;
+    getIt<SettingsCubit>().updateSourceLanguage(language);
     emit(ChangeSourceLanguageState());
   }
 
   void changeTargetLanguage(String? language) {
     if (language == null) return;
     selectedTargetLanguage = language;
+    getIt<SettingsCubit>().updateTargetLanguage(language);
     emit(ChangeTargetLanguageState());
   }
 
@@ -53,6 +55,8 @@ class HomeCubit extends Cubit<HomeStates> {
     final temp = selectedSourceLanguage;
     selectedSourceLanguage = selectedTargetLanguage;
     selectedTargetLanguage = temp;
+    getIt<SettingsCubit>().updateSourceLanguage(selectedSourceLanguage);
+    getIt<SettingsCubit>().updateTargetLanguage(selectedTargetLanguage);
     emit(SwapLanguagesState());
   }
 
@@ -81,8 +85,6 @@ class HomeCubit extends Cubit<HomeStates> {
     result.fold(
       (exception) => emit(TranslateTextErrorState(exception.toString())),
       (translatedText) {
-        log('Source Text: $text');
-        log('Translated Text: $translatedText');
         targetText = translatedText;
         getIt<TranslationsCubit>().addTranslation(
           translation: TranslationModel.newTranslation(

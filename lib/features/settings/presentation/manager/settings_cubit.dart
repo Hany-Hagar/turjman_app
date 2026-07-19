@@ -23,6 +23,10 @@ class SettingsCubit extends HydratedCubit<AppUserPref> {
 
   void toggleFirstTimeUser() => emit(state.copyWith(isFirstTime: !state.isFirstTime));
 
+  void updateSourceLanguage(String sourceLanguage) => emit(state.copyWith(sourceLanguage: sourceLanguage));
+
+  void updateTargetLanguage(String targetLanguage) => emit(state.copyWith(targetLanguage: targetLanguage));
+
   @override
   AppUserPref? fromJson(Map<String, dynamic> json) {
     try {
