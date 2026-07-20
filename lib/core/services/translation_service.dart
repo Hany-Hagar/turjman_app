@@ -9,6 +9,35 @@ class TranslationService {
   static List<TranslateLanguage> get supportedLanguages =>
       TranslateLanguage.values;
 
+  static Future<
+    ({
+      List<TranslateLanguage> downloaded,
+      List<TranslateLanguage> notDownloaded,
+    })
+  >
+  getLanguages() async {
+    final downloaded = <TranslateLanguage>[];
+    final notDownloaded = <TranslateLanguage>[];
+
+    final results = await Future.wait(
+      TranslateLanguage.values.map((language) async {
+        final isDownloaded = await _modelManager.isModelDownloaded(
+          language.bcpCode,
+        );
+        return (language, isDownloaded);
+      }),
+    );
+    for (final result in results) {
+      if (result.$2) {
+        downloaded.add(result.$1);
+      } else {
+        notDownloaded.add(result.$1);
+      }
+    }
+
+    return (downloaded: downloaded, notDownloaded: notDownloaded);
+  }
+
   static Future<void> downloadLanguage(TranslateLanguage language) async {
     await _modelManager.downloadModel(language.bcpCode);
   }
