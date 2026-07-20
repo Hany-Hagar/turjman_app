@@ -1,4 +1,3 @@
-
 import 'generated/l10n.dart';
 import 'core/utils/theme.dart';
 import 'core/di/server_locator.dart';
@@ -18,7 +17,6 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'features/settings/presentation/manager/settings_cubit.dart';
 import 'features/translations/presentation/manager/translations_cubit.dart';
 
-
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   Bloc.observer = MyBlocObserver();
@@ -37,7 +35,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
-        // SettingsCubit 
+        // SettingsCubit
         BlocProvider(create: (context) => getIt<SettingsCubit>()),
 
         // HomeCubit
@@ -51,11 +49,9 @@ class MyApp extends StatelessWidget {
 
         // ImageCubit
         BlocProvider(create: (context) => getIt<ImageCubit>()),
-
-
       ],
       child: BlocBuilder<SettingsCubit, AppUserPref>(
-        builder:(context, state) =>  ScreenUtilInit(
+        builder: (context, state) => ScreenUtilInit(
           designSize: const Size(390, 884),
           minTextAdapt: true,
           splitScreenMode: true,
@@ -77,8 +73,8 @@ class MyApp extends StatelessWidget {
               home: SplashView(),
             );
           },
-        )
-          )
-      );
+        ),
+      ),
+    );
   }
 }

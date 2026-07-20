@@ -16,7 +16,11 @@ import '../../features/translations/data/repo/translations_repo.dart';
 import '../../features/settings/presentation/manager/settings_cubit.dart';
 import '../../features/translations/data/database/translations_data.dart';
 import '../../features/translations/data/repo/translations_repo_impl.dart';
+import '../../features/offline_languages/data/repo/offline_languages_repo.dart';
 import '../../features/translations/presentation/manager/translations_cubit.dart';
+import '../../features/offline_languages/data/database/offline_languages_data.dart';
+import '../../features/offline_languages/data/repo/offline_languages_repo_impl.dart';
+import '../../features/offline_languages/presentation/manager/offline_languages_cubit.dart';
 
 var getIt = GetIt.instance;
 
@@ -76,5 +80,16 @@ void setupLocator() {
 
   getIt.registerLazySingleton<ImageCubit>(
     () => ImageCubit(imageRepo: getIt<ImageRepo>()),
+  );
+
+  // Offline Languages
+    getIt.registerLazySingleton<OfflineLanguagesData>(() => OfflineLanguagesData());
+
+  getIt.registerLazySingleton<OfflineLanguagesRepo>(
+    () => OfflineLanguagesRepoImpl(offlineLanguagesData: getIt<OfflineLanguagesData>()),
+  );
+
+  getIt.registerFactory<OfflineLanguagesCubit>(
+    () => OfflineLanguagesCubit(offlineLanguagesRepo: getIt<OfflineLanguagesRepo>()),
   );
 }
