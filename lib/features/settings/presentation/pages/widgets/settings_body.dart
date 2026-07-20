@@ -1,3 +1,4 @@
+import '../../../../offline_languages/presentation/pages/views/offline_languages_view.dart';
 import 'theme_item.dart';
 import 'settings_item.dart';
 import 'settings_title.dart';
@@ -25,6 +26,14 @@ class SettingsBody extends StatelessWidget {
           title: s.languageTitle,
           subtitle: s.languageSubtitle,
           navigationPage: const AppLanguageView(),
+        ),
+        SettingsTitle(title: s.dataAndStorage),
+        SettingsItem(
+          icon: IconBroken.Download,
+          iconColor: Colors.green,
+          title: s.offlineLanguagesTitle,
+          subtitle: s.offlineLanguagesSubtitle,
+          navigationPage: const OfflineLanguagesView(),
         ),
       ],
     );

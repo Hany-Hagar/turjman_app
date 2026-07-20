@@ -34,6 +34,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "chooseFromGallery": MessageLookupByLibrary.simpleMessage("اختر من المعرض"),
     "copySuccess": MessageLookupByLibrary.simpleMessage("تم النسخ إلى الحافظة"),
+    "dataAndStorage": MessageLookupByLibrary.simpleMessage("البيانات والتخزين"),
     "emptyTranslations": MessageLookupByLibrary.simpleMessage(
       "لا توجد ترجمات بعد",
     ),
@@ -57,6 +58,12 @@ class MessageLookup extends MessageLookupByLibrary {
     "languages": MessageLookupByLibrary.simpleMessage("اللغات"),
     "languagesSubtitle": MessageLookupByLibrary.simpleMessage(
       "اختر لغتك المفضلة للتطبيق",
+    ),
+    "offlineLanguagesSubtitle": MessageLookupByLibrary.simpleMessage(
+      "قم بتنزيل اللغات لاستخدامها بدون اتصال بالإنترنت",
+    ),
+    "offlineLanguagesTitle": MessageLookupByLibrary.simpleMessage(
+      "اللغات غير المتصلة بالإنترنت",
     ),
     "onBoardingButton1": MessageLookupByLibrary.simpleMessage("ابدأ"),
     "onBoardingButton2": MessageLookupByLibrary.simpleMessage("التالي"),

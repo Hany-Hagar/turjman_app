@@ -36,6 +36,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Choose from Gallery",
     ),
     "copySuccess": MessageLookupByLibrary.simpleMessage("Copied to clipboard"),
+    "dataAndStorage": MessageLookupByLibrary.simpleMessage("Data & Storage"),
     "emptyTranslations": MessageLookupByLibrary.simpleMessage(
       "No translations available",
     ),
@@ -59,6 +60,12 @@ class MessageLookup extends MessageLookupByLibrary {
     "languages": MessageLookupByLibrary.simpleMessage("Languages"),
     "languagesSubtitle": MessageLookupByLibrary.simpleMessage(
       "Select your preferred language for the app",
+    ),
+    "offlineLanguagesSubtitle": MessageLookupByLibrary.simpleMessage(
+      "Manage your offline language packs",
+    ),
+    "offlineLanguagesTitle": MessageLookupByLibrary.simpleMessage(
+      "Offline Languages",
     ),
     "onBoardingButton1": MessageLookupByLibrary.simpleMessage(
       "Let\'s Get Started",

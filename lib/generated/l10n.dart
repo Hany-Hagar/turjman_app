@@ -364,6 +364,16 @@ class S {
     );
   }
 
+  /// `Data & Storage`
+  String get dataAndStorage {
+    return Intl.message(
+      'Data & Storage',
+      name: 'dataAndStorage',
+      desc: 'The label for data and storage section',
+      args: [],
+    );
+  }
+
   /// `Theme`
   String get themeTitle {
     return Intl.message(
@@ -500,6 +510,26 @@ class S {
       'Tap to change the app language',
       name: 'languageItemSubtitle',
       desc: 'The subtitle for the language item',
+      args: [],
+    );
+  }
+
+  /// `Offline Languages`
+  String get offlineLanguagesTitle {
+    return Intl.message(
+      'Offline Languages',
+      name: 'offlineLanguagesTitle',
+      desc: 'The title for the offline languages',
+      args: [],
+    );
+  }
+
+  /// `Manage your offline language packs`
+  String get offlineLanguagesSubtitle {
+    return Intl.message(
+      'Manage your offline language packs',
+      name: 'offlineLanguagesSubtitle',
+      desc: 'The subtitle for the offline languages',
       args: [],
     );
   }

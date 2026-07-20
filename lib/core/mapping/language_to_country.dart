@@ -12,7 +12,7 @@ const Map<String, String> languageToCountry = {
   'danish': 'DK',
   'dutch': 'NL',
   'english': 'US',
-  'esperanto': 'UN',
+  'esperanto': 'PL',
   'estonian': 'EE',
   'finnish': 'FI',
   'french': 'FR',

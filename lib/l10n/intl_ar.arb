@@ -145,6 +145,10 @@
     "@personalization": {
         "description": "نص التسمية لقسم التخصيص"
     },
+    "dataAndStorage":"البيانات والتخزين",
+    "@dataAndStorage": {
+        "description": "نص التسمية لقسم البيانات والتخزين"
+    },
 
 
 
@@ -206,5 +210,16 @@
     "languageItemSubtitle":"اضغط لتغيير لغة التطبيق",
     "@languageItemSubtitle": {
         "description": "نص التسمية للعنوان الفرعي للغة"
+    },
+
+
+
+    "offlineLanguagesTitle":"اللغات غير المتصلة بالإنترنت",
+    "@offlineLanguagesTitle": {
+        "description": "نص التسمية لعنوان اللغات غير المتصلة بالإنترنت"
+    },
+    "offlineLanguagesSubtitle":"قم بتنزيل اللغات لاستخدامها بدون اتصال بالإنترنت",
+    "@offlineLanguagesSubtitle": {
+        "description": "نص التسمية للعنوان الفرعي للغات غير المتصلة بالإنترنت"
     }
 }

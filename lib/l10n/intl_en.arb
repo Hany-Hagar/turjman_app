@@ -145,6 +145,10 @@
     "@personalization": {
         "description": "The label for personalization section"
     },
+    "dataAndStorage":"Data & Storage",
+    "@dataAndStorage": {
+        "description": "The label for data and storage section"
+    },
 
 
 
@@ -209,5 +213,16 @@
     "languageItemSubtitle":"Tap to change the app language",
     "@languageItemSubtitle": {
         "description": "The subtitle for the language item"
+    },
+
+
+
+    "offlineLanguagesTitle":"Offline Languages",
+    "@offlineLanguagesTitle": {
+        "description": "The title for the offline languages"
+    },
+    "offlineLanguagesSubtitle":"Manage your offline language packs",
+    "@offlineLanguagesSubtitle": {
+        "description": "The subtitle for the offline languages"
     }
 }
