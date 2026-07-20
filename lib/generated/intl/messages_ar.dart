@@ -22,7 +22,12 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+    "appLanguage": MessageLookupByLibrary.simpleMessage("لغة التطبيق"),
+    "appLanguageSubtitle": MessageLookupByLibrary.simpleMessage(
+      "اختر لغتك المفضلة للتطبيق",
+    ),
     "appTitle": MessageLookupByLibrary.simpleMessage("تُرجمان"),
+    "arabic": MessageLookupByLibrary.simpleMessage("العربية"),
     "camera": MessageLookupByLibrary.simpleMessage("كاميرا"),
     "captureWithCamera": MessageLookupByLibrary.simpleMessage(
       "التقاط بالكاميرا",
@@ -32,6 +37,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "emptyTranslations": MessageLookupByLibrary.simpleMessage(
       "لا توجد ترجمات بعد",
     ),
+    "english": MessageLookupByLibrary.simpleMessage("الإنجليزية"),
     "homeSubtitle": MessageLookupByLibrary.simpleMessage(
       "أفضل تطبيق للترجمة لاحتياجاتك",
     ),
@@ -41,16 +47,32 @@ class MessageLookup extends MessageLookupByLibrary {
       "اختر صورة لاستخراج النص منها",
     ),
     "imageTitle": MessageLookupByLibrary.simpleMessage("صورة إلى نص"),
+    "languageItemSubtitle": MessageLookupByLibrary.simpleMessage(
+      "اضغط لتغيير لغة التطبيق",
+    ),
+    "languageSubtitle": MessageLookupByLibrary.simpleMessage(
+      "اختر لغتك المفضلة للتطبيق",
+    ),
+    "languageTitle": MessageLookupByLibrary.simpleMessage("اللغة"),
+    "languages": MessageLookupByLibrary.simpleMessage("اللغات"),
+    "languagesSubtitle": MessageLookupByLibrary.simpleMessage(
+      "اختر لغتك المفضلة للتطبيق",
+    ),
     "onBoardingButton1": MessageLookupByLibrary.simpleMessage("ابدأ"),
     "onBoardingButton2": MessageLookupByLibrary.simpleMessage("التالي"),
     "onBoardingButton3": MessageLookupByLibrary.simpleMessage("التالي"),
     "onBoardingButton4": MessageLookupByLibrary.simpleMessage("ابدأ الترجمة"),
     "or": MessageLookupByLibrary.simpleMessage("أو"),
+    "personalization": MessageLookupByLibrary.simpleMessage("التخصيص"),
     "recentTranslations": MessageLookupByLibrary.simpleMessage("اخر الترجمات"),
     "selectAnImage": MessageLookupByLibrary.simpleMessage("اختر صورة"),
     "selectAnImageHint": MessageLookupByLibrary.simpleMessage(
       "اختر صورة من معرضك\nأو قم بتصوير واحدة جديدة لاستخراج النص.",
     ),
+    "settingsSubtitle": MessageLookupByLibrary.simpleMessage(
+      "تخصيص التطبيق حسب تفضيلاتك",
+    ),
+    "settingsTitle": MessageLookupByLibrary.simpleMessage("الإعدادات"),
     "source": MessageLookupByLibrary.simpleMessage("المصدر"),
     "sourceTextHint": MessageLookupByLibrary.simpleMessage(
       "اكتب شيئًا للترجمة",

@@ -66,6 +66,7 @@ class _Children extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var s = S.of(context);
     return BlocBuilder<SettingsCubit, AppUserPref>(
       builder: (context, state) => Container(
         margin: EdgeInsets.symmetric(horizontal: 12.w),
@@ -77,13 +78,13 @@ class _Children extends StatelessWidget {
         child: Row(
           children: [
             Expanded(
-              child: _Child(title: 'Light', themeMode: ThemeMode.light),
+              child: _Child(title: s.themeLight, themeMode: ThemeMode.light),
             ),
             Expanded(
-              child: _Child(title: 'Dark', themeMode: ThemeMode.dark),
+              child: _Child(title: s.themeDark, themeMode: ThemeMode.dark),
             ),
             Expanded(
-              child: _Child(title: 'System', themeMode: ThemeMode.system),
+              child: _Child(title: s.themeSystem, themeMode: ThemeMode.system),
             ),
           ],
         ),

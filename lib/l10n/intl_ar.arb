@@ -141,6 +141,10 @@
     "@settingsSubtitle": {
         "description": "نص التسمية للعنوان الفرعي للإعدادات"
     },
+    "personalization":"التخصيص",
+    "@personalization": {
+        "description": "نص التسمية لقسم التخصيص"
+    },
 
 
 
@@ -163,5 +167,44 @@
     "themeSystem":"النظام",
     "@themeSystem": {
         "description": "نص التسمية للوضع الافتراضي للنظام"
+    },
+
+
+
+    "languageTitle":"اللغة",
+    "@languageTitle": {
+        "description": "نص التسمية لعنوان اللغة"
+    },
+    "languageSubtitle":"اختر لغتك المفضلة للتطبيق",
+    "@languageSubtitle": {
+        "description": "نص التسمية للعنوان الفرعي للغة"
+    },
+    "appLanguage":"لغة التطبيق",
+    "@appLanguage": {
+        "description": "نص التسمية لعنوان لغة التطبيق"
+    },
+    "appLanguageSubtitle":"اختر لغتك المفضلة للتطبيق",
+    "@appLanguageSubtitle": {
+        "description": "نص التسمية للعنوان الفرعي للغة التطبيق"
+    },
+    "languages":"اللغات",
+    "@languages": {
+        "description": "نص التسمية للغات"
+    },
+    "languagesSubtitle":"اختر لغتك المفضلة للتطبيق",
+    "@languagesSubtitle": {
+        "description": "نص التسمية للعنوان الفرعي للغات"
+    },
+    "english":"الإنجليزية",
+    "@english": {
+        "description": "نص التسمية لغة الإنجليزية"
+    },
+    "arabic":"العربية",
+    "@arabic": {
+        "description": "نص التسمية لغة العربية"
+    },
+    "languageItemSubtitle":"اضغط لتغيير لغة التطبيق",
+    "@languageItemSubtitle": {
+        "description": "نص التسمية للعنوان الفرعي للغة"
     }
 }

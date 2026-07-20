@@ -1,6 +1,10 @@
 import 'theme_item.dart';
+import 'settings_item.dart';
 import 'settings_title.dart';
 import 'package:flutter/material.dart';
+import '../views/app_language_view.dart';
+import '../../../../../generated/l10n.dart';
+import '../../../../../core/services/icon_broken.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class SettingsBody extends StatelessWidget {
@@ -8,12 +12,20 @@ class SettingsBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var s = S.of(context);
     return Column(
       spacing: 10.h,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        SettingsTitle(title: 'Personalization'),
+        SettingsTitle(title: s.personalization),
         const ThemeItem(),
+        SettingsItem(
+          icon: IconBroken.Swap,
+          iconColor: Colors.blue,
+          title: s.languageTitle,
+          subtitle: s.languageSubtitle,
+          navigationPage: const AppLanguageView(),
+        ),
       ],
     );
   }

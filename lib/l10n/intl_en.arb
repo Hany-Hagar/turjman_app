@@ -133,6 +133,21 @@
 
 
 
+    "settingsTitle":"Settings",
+    "@settingsTitle": {
+        "description": "The title for the settings page"
+    },
+    "settingsSubtitle":"Customize your app experience",
+    "@settingsSubtitle": {
+        "description": "The subtitle for the settings page"
+    },
+    "personalization":"Personalization",
+    "@personalization": {
+        "description": "The label for personalization section"
+    },
+
+
+
     "themeTitle":"Theme",
     "@themeTitle": {
         "description": "The title for the theme"
@@ -152,5 +167,47 @@
     "themeSystem":"System",
     "@themeSystem": {
         "description": "The label for the system default theme"
+    },
+
+
+
+    "languageTitle":"Language",
+    "@languageTitle": {
+        "description": "The title for the language"
+    },
+    "languageSubtitle":"Select your preferred language for the app",
+    "@languageSubtitle": {
+        "description": "The subtitle for the language"
+    },
+    "appLanguage":"App Language",
+    "@appLanguage": {
+        "description": "The title for the app language"
+    },
+    "appLanguageSubtitle":"Select your preferred language for the app",
+    "@appLanguageSubtitle": {
+        "description": "The subtitle for the app language"
+    },
+    "languages":"Languages",
+    "@languages": {
+        "description": "The label for languages"
+    },
+    "languagesSubtitle":"Select your preferred language for the app",
+    "@languagesSubtitle": {
+        "description": "The subtitle for languages"
+    },
+    "english":"English",
+    "@english": {
+        "description": "The label for English language"
+    },
+    "arabic":"Arabic",
+    "@arabic": {
+        "description": "The label for Arabic language"
+    },
+    "@arabicCode": {
+        "description": "The code for Arabic language"
+    },
+    "languageItemSubtitle":"Tap to change the app language",
+    "@languageItemSubtitle": {
+        "description": "The subtitle for the language item"
     }
 }

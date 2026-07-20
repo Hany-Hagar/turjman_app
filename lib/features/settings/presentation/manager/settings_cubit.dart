@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import '../../models/app_user_pref.dart';
+import '../../models/language_model.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hydrated_bloc/hydrated_bloc.dart';
+
 
 
 class SettingsCubit extends HydratedCubit<AppUserPref> {
@@ -12,9 +14,8 @@ class SettingsCubit extends HydratedCubit<AppUserPref> {
 
   // --- Functional Updates ---
 
-  void updateLanguage(String lang) {
-    int langIndex = lang == "en" ? 0 : 1;
-    emit(state.copyWith(lang: lang, langIndex: langIndex));
+  void updateLanguage(LanguageModel language) {
+    emit(state.copyWith(lang: language.code, langIndex: language.index));
   }
 
   void updateTheme(ThemeMode theme) => emit(state.copyWith(theme: theme));

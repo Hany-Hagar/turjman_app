@@ -334,6 +334,36 @@ class S {
     );
   }
 
+  /// `Settings`
+  String get settingsTitle {
+    return Intl.message(
+      'Settings',
+      name: 'settingsTitle',
+      desc: 'The title for the settings page',
+      args: [],
+    );
+  }
+
+  /// `Customize your app experience`
+  String get settingsSubtitle {
+    return Intl.message(
+      'Customize your app experience',
+      name: 'settingsSubtitle',
+      desc: 'The subtitle for the settings page',
+      args: [],
+    );
+  }
+
+  /// `Personalization`
+  String get personalization {
+    return Intl.message(
+      'Personalization',
+      name: 'personalization',
+      desc: 'The label for personalization section',
+      args: [],
+    );
+  }
+
   /// `Theme`
   String get themeTitle {
     return Intl.message(
@@ -380,6 +410,96 @@ class S {
       'System',
       name: 'themeSystem',
       desc: 'The label for the system default theme',
+      args: [],
+    );
+  }
+
+  /// `Language`
+  String get languageTitle {
+    return Intl.message(
+      'Language',
+      name: 'languageTitle',
+      desc: 'The title for the language',
+      args: [],
+    );
+  }
+
+  /// `Select your preferred language for the app`
+  String get languageSubtitle {
+    return Intl.message(
+      'Select your preferred language for the app',
+      name: 'languageSubtitle',
+      desc: 'The subtitle for the language',
+      args: [],
+    );
+  }
+
+  /// `App Language`
+  String get appLanguage {
+    return Intl.message(
+      'App Language',
+      name: 'appLanguage',
+      desc: 'The title for the app language',
+      args: [],
+    );
+  }
+
+  /// `Select your preferred language for the app`
+  String get appLanguageSubtitle {
+    return Intl.message(
+      'Select your preferred language for the app',
+      name: 'appLanguageSubtitle',
+      desc: 'The subtitle for the app language',
+      args: [],
+    );
+  }
+
+  /// `Languages`
+  String get languages {
+    return Intl.message(
+      'Languages',
+      name: 'languages',
+      desc: 'The label for languages',
+      args: [],
+    );
+  }
+
+  /// `Select your preferred language for the app`
+  String get languagesSubtitle {
+    return Intl.message(
+      'Select your preferred language for the app',
+      name: 'languagesSubtitle',
+      desc: 'The subtitle for languages',
+      args: [],
+    );
+  }
+
+  /// `English`
+  String get english {
+    return Intl.message(
+      'English',
+      name: 'english',
+      desc: 'The label for English language',
+      args: [],
+    );
+  }
+
+  /// `Arabic`
+  String get arabic {
+    return Intl.message(
+      'Arabic',
+      name: 'arabic',
+      desc: 'The label for Arabic language',
+      args: [],
+    );
+  }
+
+  /// `Tap to change the app language`
+  String get languageItemSubtitle {
+    return Intl.message(
+      'Tap to change the app language',
+      name: 'languageItemSubtitle',
+      desc: 'The subtitle for the language item',
       args: [],
     );
   }

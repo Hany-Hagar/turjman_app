@@ -93,6 +93,7 @@ class _Title extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+
       mainAxisSize: MainAxisSize.max,
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: centerTitle ? CrossAxisAlignment.center : CrossAxisAlignment.start,
@@ -102,7 +103,6 @@ class _Title extends StatelessWidget {
           child: CustomText(
             text: text,
             size: 20.sp,
-            height: 0.9,
             type: Type.overMedium,
           )
         ),

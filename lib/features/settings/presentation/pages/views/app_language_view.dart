@@ -1,21 +1,17 @@
 import 'package:flutter/material.dart';
-import '../widgets/settings_body.dart';
 import '../../../../../generated/l10n.dart';
+import '../widgets/app_language_body.dart';
 import '../../../../../core/widgets/custom_app_bar.dart';
 import '../../../../../core/widgets/custom_background.dart';
 
-class SettingsView extends StatelessWidget {
-  const SettingsView({super.key});
+class AppLanguageView extends StatelessWidget {
+  const AppLanguageView({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return CustomBackground(
-      top: _Top(),
-      body: Padding(
-        padding: const EdgeInsets.all(12.0),
-        child: const SettingsBody()
-      )
-    );
+    return CustomBackground(top: const _Top(), body: const SingleChildScrollView(
+      child: AppLanguageBody()
+    ));
   }
 }
 
@@ -26,8 +22,8 @@ class _Top extends StatelessWidget {
   Widget build(BuildContext context) {
     var s = S.of(context);
     return CustomAppBar(
-      title: s.settingsTitle,
-      subTitle: s.settingsSubtitle,
+      title: s.appLanguage,
+      subTitle: s.appLanguageSubtitle,
     );
   }
 }

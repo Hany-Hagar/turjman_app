@@ -22,7 +22,12 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+    "appLanguage": MessageLookupByLibrary.simpleMessage("App Language"),
+    "appLanguageSubtitle": MessageLookupByLibrary.simpleMessage(
+      "Select your preferred language for the app",
+    ),
     "appTitle": MessageLookupByLibrary.simpleMessage("Turjuman"),
+    "arabic": MessageLookupByLibrary.simpleMessage("Arabic"),
     "camera": MessageLookupByLibrary.simpleMessage("Camera"),
     "captureWithCamera": MessageLookupByLibrary.simpleMessage(
       "Capture with Camera",
@@ -34,6 +39,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "emptyTranslations": MessageLookupByLibrary.simpleMessage(
       "No translations available",
     ),
+    "english": MessageLookupByLibrary.simpleMessage("English"),
     "homeSubtitle": MessageLookupByLibrary.simpleMessage(
       "The best translation app for your needs",
     ),
@@ -43,6 +49,17 @@ class MessageLookup extends MessageLookupByLibrary {
       "Select an image to extract text from",
     ),
     "imageTitle": MessageLookupByLibrary.simpleMessage("Image to Text"),
+    "languageItemSubtitle": MessageLookupByLibrary.simpleMessage(
+      "Tap to change the app language",
+    ),
+    "languageSubtitle": MessageLookupByLibrary.simpleMessage(
+      "Select your preferred language for the app",
+    ),
+    "languageTitle": MessageLookupByLibrary.simpleMessage("Language"),
+    "languages": MessageLookupByLibrary.simpleMessage("Languages"),
+    "languagesSubtitle": MessageLookupByLibrary.simpleMessage(
+      "Select your preferred language for the app",
+    ),
     "onBoardingButton1": MessageLookupByLibrary.simpleMessage(
       "Let\'s Get Started",
     ),
@@ -52,6 +69,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Start Translating",
     ),
     "or": MessageLookupByLibrary.simpleMessage("OR"),
+    "personalization": MessageLookupByLibrary.simpleMessage("Personalization"),
     "recentTranslations": MessageLookupByLibrary.simpleMessage(
       "Recent Translations",
     ),
@@ -59,6 +77,10 @@ class MessageLookup extends MessageLookupByLibrary {
     "selectAnImageHint": MessageLookupByLibrary.simpleMessage(
       "Choose an image from your gallery\nor capture a new one to extract text.",
     ),
+    "settingsSubtitle": MessageLookupByLibrary.simpleMessage(
+      "Customize your app experience",
+    ),
+    "settingsTitle": MessageLookupByLibrary.simpleMessage("Settings"),
     "source": MessageLookupByLibrary.simpleMessage("Source"),
     "sourceTextHint": MessageLookupByLibrary.simpleMessage(
       "Type something to translate",
