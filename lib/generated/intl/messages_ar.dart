@@ -22,44 +22,54 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
-        "appTitle": MessageLookupByLibrary.simpleMessage("تُرجمان"),
-        "camera": MessageLookupByLibrary.simpleMessage("كاميرا"),
-        "captureWithCamera":
-            MessageLookupByLibrary.simpleMessage("التقاط بالكاميرا"),
-        "chooseFromGallery":
-            MessageLookupByLibrary.simpleMessage("اختر من المعرض"),
-        "copySuccess":
-            MessageLookupByLibrary.simpleMessage("تم النسخ إلى الحافظة"),
-        "emptyTranslations":
-            MessageLookupByLibrary.simpleMessage("لا توجد ترجمات بعد"),
-        "homeSubtitle": MessageLookupByLibrary.simpleMessage(
-            "أفضل تطبيق للترجمة لاحتياجاتك"),
-        "homeTitle": MessageLookupByLibrary.simpleMessage("تُرجمان"),
-        "image": MessageLookupByLibrary.simpleMessage("صورة"),
-        "imageSubtitle": MessageLookupByLibrary.simpleMessage(
-            "اختر صورة لاستخراج النص منها"),
-        "imageTitle": MessageLookupByLibrary.simpleMessage("صورة إلى نص"),
-        "onBoardingButton1": MessageLookupByLibrary.simpleMessage("ابدأ"),
-        "onBoardingButton2": MessageLookupByLibrary.simpleMessage("التالي"),
-        "onBoardingButton3": MessageLookupByLibrary.simpleMessage("التالي"),
-        "onBoardingButton4":
-            MessageLookupByLibrary.simpleMessage("ابدأ الترجمة"),
-        "or": MessageLookupByLibrary.simpleMessage("أو"),
-        "recentTranslations":
-            MessageLookupByLibrary.simpleMessage("اخر الترجمات"),
-        "selectAnImage": MessageLookupByLibrary.simpleMessage("اختر صورة"),
-        "selectAnImageHint": MessageLookupByLibrary.simpleMessage(
-            "اختر صورة من معرضك\nأو قم بتصوير واحدة جديدة لاستخراج النص."),
-        "source": MessageLookupByLibrary.simpleMessage("المصدر"),
-        "sourceTextHint":
-            MessageLookupByLibrary.simpleMessage("اكتب شيئًا للترجمة"),
-        "sourceTitle": MessageLookupByLibrary.simpleMessage("المصدر"),
-        "supportedFormats": MessageLookupByLibrary.simpleMessage(
-            " الصيغ المدعومة: JPG, PNG, GIF"),
-        "translation": MessageLookupByLibrary.simpleMessage("الترجمة"),
-        "translationTitle": MessageLookupByLibrary.simpleMessage("الترجمة"),
-        "translations": MessageLookupByLibrary.simpleMessage("الترجمات"),
-        "viewAll": MessageLookupByLibrary.simpleMessage("عرض الكل"),
-        "voice": MessageLookupByLibrary.simpleMessage("صوت")
-      };
+    "appTitle": MessageLookupByLibrary.simpleMessage("تُرجمان"),
+    "camera": MessageLookupByLibrary.simpleMessage("كاميرا"),
+    "captureWithCamera": MessageLookupByLibrary.simpleMessage(
+      "التقاط بالكاميرا",
+    ),
+    "chooseFromGallery": MessageLookupByLibrary.simpleMessage("اختر من المعرض"),
+    "copySuccess": MessageLookupByLibrary.simpleMessage("تم النسخ إلى الحافظة"),
+    "emptyTranslations": MessageLookupByLibrary.simpleMessage(
+      "لا توجد ترجمات بعد",
+    ),
+    "homeSubtitle": MessageLookupByLibrary.simpleMessage(
+      "أفضل تطبيق للترجمة لاحتياجاتك",
+    ),
+    "homeTitle": MessageLookupByLibrary.simpleMessage("تُرجمان"),
+    "image": MessageLookupByLibrary.simpleMessage("صورة"),
+    "imageSubtitle": MessageLookupByLibrary.simpleMessage(
+      "اختر صورة لاستخراج النص منها",
+    ),
+    "imageTitle": MessageLookupByLibrary.simpleMessage("صورة إلى نص"),
+    "onBoardingButton1": MessageLookupByLibrary.simpleMessage("ابدأ"),
+    "onBoardingButton2": MessageLookupByLibrary.simpleMessage("التالي"),
+    "onBoardingButton3": MessageLookupByLibrary.simpleMessage("التالي"),
+    "onBoardingButton4": MessageLookupByLibrary.simpleMessage("ابدأ الترجمة"),
+    "or": MessageLookupByLibrary.simpleMessage("أو"),
+    "recentTranslations": MessageLookupByLibrary.simpleMessage("اخر الترجمات"),
+    "selectAnImage": MessageLookupByLibrary.simpleMessage("اختر صورة"),
+    "selectAnImageHint": MessageLookupByLibrary.simpleMessage(
+      "اختر صورة من معرضك\nأو قم بتصوير واحدة جديدة لاستخراج النص.",
+    ),
+    "source": MessageLookupByLibrary.simpleMessage("المصدر"),
+    "sourceTextHint": MessageLookupByLibrary.simpleMessage(
+      "اكتب شيئًا للترجمة",
+    ),
+    "sourceTitle": MessageLookupByLibrary.simpleMessage("المصدر"),
+    "supportedFormats": MessageLookupByLibrary.simpleMessage(
+      " الصيغ المدعومة: JPG, PNG, GIF",
+    ),
+    "themeDark": MessageLookupByLibrary.simpleMessage("داكن"),
+    "themeLight": MessageLookupByLibrary.simpleMessage("فاتح"),
+    "themeSubtitle": MessageLookupByLibrary.simpleMessage(
+      "اختر بين الوضع الفاتح أو الداكن أو الافتراضي للنظام",
+    ),
+    "themeSystem": MessageLookupByLibrary.simpleMessage("النظام"),
+    "themeTitle": MessageLookupByLibrary.simpleMessage("المظهر"),
+    "translation": MessageLookupByLibrary.simpleMessage("الترجمة"),
+    "translationTitle": MessageLookupByLibrary.simpleMessage("الترجمة"),
+    "translations": MessageLookupByLibrary.simpleMessage("الترجمات"),
+    "viewAll": MessageLookupByLibrary.simpleMessage("عرض الكل"),
+    "voice": MessageLookupByLibrary.simpleMessage("صوت"),
+  };
 }

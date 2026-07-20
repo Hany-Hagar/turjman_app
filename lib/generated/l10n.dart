@@ -18,8 +18,10 @@ class S {
   static S? _current;
 
   static S get current {
-    assert(_current != null,
-        'No instance of S was loaded. Try to initialize the S delegate before accessing S.current.');
+    assert(
+      _current != null,
+      'No instance of S was loaded. Try to initialize the S delegate before accessing S.current.',
+    );
     return _current!;
   }
 
@@ -41,8 +43,10 @@ class S {
 
   static S of(BuildContext context) {
     final instance = S.maybeOf(context);
-    assert(instance != null,
-        'No instance of S present in the widget tree. Did you add S.delegate in localizationsDelegates?');
+    assert(
+      instance != null,
+      'No instance of S present in the widget tree. Did you add S.delegate in localizationsDelegates?',
+    );
     return instance!;
   }
 
@@ -326,6 +330,56 @@ class S {
       'Supported formats: JPG, PNG, GIF',
       name: 'supportedFormats',
       desc: 'The label for supported image formats',
+      args: [],
+    );
+  }
+
+  /// `Theme`
+  String get themeTitle {
+    return Intl.message(
+      'Theme',
+      name: 'themeTitle',
+      desc: 'The title for the theme',
+      args: [],
+    );
+  }
+
+  /// `Choose between light, dark, or system default`
+  String get themeSubtitle {
+    return Intl.message(
+      'Choose between light, dark, or system default',
+      name: 'themeSubtitle',
+      desc: 'The subtitle for the theme',
+      args: [],
+    );
+  }
+
+  /// `Light`
+  String get themeLight {
+    return Intl.message(
+      'Light',
+      name: 'themeLight',
+      desc: 'The label for the light theme',
+      args: [],
+    );
+  }
+
+  /// `Dark`
+  String get themeDark {
+    return Intl.message(
+      'Dark',
+      name: 'themeDark',
+      desc: 'The label for the dark theme',
+      args: [],
+    );
+  }
+
+  /// `System`
+  String get themeSystem {
+    return Intl.message(
+      'System',
+      name: 'themeSystem',
+      desc: 'The label for the system default theme',
       args: [],
     );
   }

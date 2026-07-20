@@ -129,5 +129,28 @@
     "supportedFormats":"Supported formats: JPG, PNG, GIF",
     "@supportedFormats": {
         "description": "The label for supported image formats"
+    },
+
+
+
+    "themeTitle":"Theme",
+    "@themeTitle": {
+        "description": "The title for the theme"
+    },
+    "themeSubtitle":"Choose between light, dark, or system default",
+    "@themeSubtitle": {
+        "description": "The subtitle for the theme"
+    },
+    "themeLight":"Light",
+    "@themeLight": {
+        "description": "The label for the light theme"
+    },
+    "themeDark":"Dark",
+    "@themeDark": {
+        "description": "The label for the dark theme"
+    },
+    "themeSystem":"System",
+    "@themeSystem": {
+        "description": "The label for the system default theme"
     }
 }

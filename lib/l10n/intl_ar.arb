@@ -129,5 +129,39 @@
     "supportedFormats":" الصيغ المدعومة: JPG, PNG, GIF",
     "@supportedFormats": {
         "description": "نص التسمية للصيغ المدعومة للصور"
+    },
+
+
+
+    "settingsTitle":"الإعدادات",
+    "@settingsTitle": {
+        "description": "نص التسمية لعنوان الإعدادات"
+    },
+    "settingsSubtitle":"تخصيص التطبيق حسب تفضيلاتك",
+    "@settingsSubtitle": {
+        "description": "نص التسمية للعنوان الفرعي للإعدادات"
+    },
+
+
+
+    "themeTitle":"المظهر",
+    "@themeTitle": {
+        "description": "نص التسمية لعنوان المظهر"
+    },
+    "themeSubtitle":"اختر بين الوضع الفاتح أو الداكن أو الافتراضي للنظام",
+    "@themeSubtitle": {
+        "description": "نص التسمية للعنوان الفرعي للمظهر"
+    },
+    "themeLight":"فاتح",
+    "@themeLight": {
+        "description": "نص التسمية للوضع الفاتح"
+    },
+    "themeDark":"داكن",
+    "@themeDark": {
+        "description": "نص التسمية للوضع الداكن"
+    },
+    "themeSystem":"النظام",
+    "@themeSystem": {
+        "description": "نص التسمية للوضع الافتراضي للنظام"
     }
 }

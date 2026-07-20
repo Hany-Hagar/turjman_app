@@ -22,46 +22,62 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
-        "appTitle": MessageLookupByLibrary.simpleMessage("Turjuman"),
-        "camera": MessageLookupByLibrary.simpleMessage("Camera"),
-        "captureWithCamera":
-            MessageLookupByLibrary.simpleMessage("Capture with Camera"),
-        "chooseFromGallery":
-            MessageLookupByLibrary.simpleMessage("Choose from Gallery"),
-        "copySuccess":
-            MessageLookupByLibrary.simpleMessage("Copied to clipboard"),
-        "emptyTranslations":
-            MessageLookupByLibrary.simpleMessage("No translations available"),
-        "homeSubtitle": MessageLookupByLibrary.simpleMessage(
-            "The best translation app for your needs"),
-        "homeTitle": MessageLookupByLibrary.simpleMessage("Turjuman"),
-        "image": MessageLookupByLibrary.simpleMessage("Image"),
-        "imageSubtitle": MessageLookupByLibrary.simpleMessage(
-            "Select an image to extract text from"),
-        "imageTitle": MessageLookupByLibrary.simpleMessage("Image to Text"),
-        "onBoardingButton1":
-            MessageLookupByLibrary.simpleMessage("Let\'s Get Started"),
-        "onBoardingButton2": MessageLookupByLibrary.simpleMessage("Next"),
-        "onBoardingButton3": MessageLookupByLibrary.simpleMessage("Next"),
-        "onBoardingButton4":
-            MessageLookupByLibrary.simpleMessage("Start Translating"),
-        "or": MessageLookupByLibrary.simpleMessage("OR"),
-        "recentTranslations":
-            MessageLookupByLibrary.simpleMessage("Recent Translations"),
-        "selectAnImage":
-            MessageLookupByLibrary.simpleMessage("Select an image"),
-        "selectAnImageHint": MessageLookupByLibrary.simpleMessage(
-            "Choose an image from your gallery\nor capture a new one to extract text."),
-        "source": MessageLookupByLibrary.simpleMessage("Source"),
-        "sourceTextHint":
-            MessageLookupByLibrary.simpleMessage("Type something to translate"),
-        "sourceTitle": MessageLookupByLibrary.simpleMessage("Source"),
-        "supportedFormats": MessageLookupByLibrary.simpleMessage(
-            "Supported formats: JPG, PNG, GIF"),
-        "translation": MessageLookupByLibrary.simpleMessage("Translation"),
-        "translationTitle": MessageLookupByLibrary.simpleMessage("Translation"),
-        "translations": MessageLookupByLibrary.simpleMessage("Translations"),
-        "viewAll": MessageLookupByLibrary.simpleMessage("View All"),
-        "voice": MessageLookupByLibrary.simpleMessage("Voice")
-      };
+    "appTitle": MessageLookupByLibrary.simpleMessage("Turjuman"),
+    "camera": MessageLookupByLibrary.simpleMessage("Camera"),
+    "captureWithCamera": MessageLookupByLibrary.simpleMessage(
+      "Capture with Camera",
+    ),
+    "chooseFromGallery": MessageLookupByLibrary.simpleMessage(
+      "Choose from Gallery",
+    ),
+    "copySuccess": MessageLookupByLibrary.simpleMessage("Copied to clipboard"),
+    "emptyTranslations": MessageLookupByLibrary.simpleMessage(
+      "No translations available",
+    ),
+    "homeSubtitle": MessageLookupByLibrary.simpleMessage(
+      "The best translation app for your needs",
+    ),
+    "homeTitle": MessageLookupByLibrary.simpleMessage("Turjuman"),
+    "image": MessageLookupByLibrary.simpleMessage("Image"),
+    "imageSubtitle": MessageLookupByLibrary.simpleMessage(
+      "Select an image to extract text from",
+    ),
+    "imageTitle": MessageLookupByLibrary.simpleMessage("Image to Text"),
+    "onBoardingButton1": MessageLookupByLibrary.simpleMessage(
+      "Let\'s Get Started",
+    ),
+    "onBoardingButton2": MessageLookupByLibrary.simpleMessage("Next"),
+    "onBoardingButton3": MessageLookupByLibrary.simpleMessage("Next"),
+    "onBoardingButton4": MessageLookupByLibrary.simpleMessage(
+      "Start Translating",
+    ),
+    "or": MessageLookupByLibrary.simpleMessage("OR"),
+    "recentTranslations": MessageLookupByLibrary.simpleMessage(
+      "Recent Translations",
+    ),
+    "selectAnImage": MessageLookupByLibrary.simpleMessage("Select an image"),
+    "selectAnImageHint": MessageLookupByLibrary.simpleMessage(
+      "Choose an image from your gallery\nor capture a new one to extract text.",
+    ),
+    "source": MessageLookupByLibrary.simpleMessage("Source"),
+    "sourceTextHint": MessageLookupByLibrary.simpleMessage(
+      "Type something to translate",
+    ),
+    "sourceTitle": MessageLookupByLibrary.simpleMessage("Source"),
+    "supportedFormats": MessageLookupByLibrary.simpleMessage(
+      "Supported formats: JPG, PNG, GIF",
+    ),
+    "themeDark": MessageLookupByLibrary.simpleMessage("Dark"),
+    "themeLight": MessageLookupByLibrary.simpleMessage("Light"),
+    "themeSubtitle": MessageLookupByLibrary.simpleMessage(
+      "Choose between light, dark, or system default",
+    ),
+    "themeSystem": MessageLookupByLibrary.simpleMessage("System"),
+    "themeTitle": MessageLookupByLibrary.simpleMessage("Theme"),
+    "translation": MessageLookupByLibrary.simpleMessage("Translation"),
+    "translationTitle": MessageLookupByLibrary.simpleMessage("Translation"),
+    "translations": MessageLookupByLibrary.simpleMessage("Translations"),
+    "viewAll": MessageLookupByLibrary.simpleMessage("View All"),
+    "voice": MessageLookupByLibrary.simpleMessage("Voice"),
+  };
 }
