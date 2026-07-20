@@ -221,5 +221,13 @@
     "offlineLanguagesSubtitle":"قم بتنزيل اللغات لاستخدامها بدون اتصال بالإنترنت",
     "@offlineLanguagesSubtitle": {
         "description": "نص التسمية للعنوان الفرعي للغات غير المتصلة بالإنترنت"
+    },
+    "downloadedLanguages":"اللغات المحمّلة",
+    "@downloadedLanguages": {
+        "description": "نص التسمية للغات المحمّلة"
+    },
+    "otherLanguages":"لغات أخرى",
+    "@otherLanguages": {
+        "description": "نص التسمية للغات أخرى"
     }
 }

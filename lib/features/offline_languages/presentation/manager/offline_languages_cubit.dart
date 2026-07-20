@@ -4,7 +4,7 @@ import '../../data/repo/offline_languages_repo.dart';
 import 'offline_languages_states.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class OfflineLanguagesCubit extends Cubit<OfflineLanguagesState> {
+class OfflineLanguagesCubit extends Cubit<OfflineLanguagesStates> {
   final OfflineLanguagesRepo offlineLanguagesRepo;
   OfflineLanguagesCubit({required this.offlineLanguagesRepo})
     : super(OfflineLanguagesInitial());

@@ -207,9 +207,6 @@
     "@arabic": {
         "description": "The label for Arabic language"
     },
-    "@arabicCode": {
-        "description": "The code for Arabic language"
-    },
     "languageItemSubtitle":"Tap to change the app language",
     "@languageItemSubtitle": {
         "description": "The subtitle for the language item"
@@ -224,5 +221,13 @@
     "offlineLanguagesSubtitle":"Manage your offline language packs",
     "@offlineLanguagesSubtitle": {
         "description": "The subtitle for the offline languages"
+    },
+    "downloadedLanguages":"Downloaded Languages",
+    "@downloadedLanguages": {
+        "description": "The label for downloaded languages"
+    },
+    "otherLanguages":"Other Languages",
+    "@otherLanguages": {
+        "description": "The label for other languages"
     }
 }

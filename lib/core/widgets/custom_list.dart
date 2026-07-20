@@ -121,6 +121,7 @@ class _Loading extends StatelessWidget {
   Widget build(BuildContext context) {
     return Skeletonizer(
       enabled: true,
+      containersColor: Theme.of(context).cardColor,
       child: _List(
         topPadding: 0,
         items: loadingItems,
