@@ -36,6 +36,10 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Copied to clipboard"),
         "dataAndStorage":
             MessageLookupByLibrary.simpleMessage("Data & Storage"),
+        "downloadFrowWifiOnlySubtitle": MessageLookupByLibrary.simpleMessage(
+            "Download language packs only when connected to Wi-Fi to save data."),
+        "downloadFrowWifiOnlyTitle":
+            MessageLookupByLibrary.simpleMessage("Download from Wi-Fi Only"),
         "downloadedLanguages":
             MessageLookupByLibrary.simpleMessage("Downloaded Languages"),
         "emptyTranslations":

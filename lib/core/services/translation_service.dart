@@ -1,4 +1,6 @@
+import '../di/server_locator.dart';
 import 'package:google_mlkit_translation/google_mlkit_translation.dart';
+import '../../features/settings/presentation/manager/settings_cubit.dart';
 
 class TranslationService {
   TranslationService();
@@ -39,7 +41,10 @@ class TranslationService {
   }
 
   static Future<void> downloadLanguage(TranslateLanguage language) async {
-    await _modelManager.downloadModel(language.bcpCode);
+    await _modelManager.downloadModel(
+      language.bcpCode,
+      isWifiRequired: getIt<SettingsCubit>().state.downloadOverWiFiOnly,
+      );
   }
 
   static Future<void> deleteLanguage(TranslateLanguage language) async {

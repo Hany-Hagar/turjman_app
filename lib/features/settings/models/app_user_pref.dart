@@ -5,17 +5,19 @@ class AppUserPref {
   final int langIndex;
   final ThemeMode theme;
   final bool isFirstTime;
-  final bool notificationsEnabled;
   final String sourceLanguage;
   final String targetLanguage;
+  final bool notificationsEnabled;
+  final bool downloadOverWiFiOnly;
   AppUserPref({
     required this.lang,
     required this.langIndex,
     required this.theme,
     required this.isFirstTime,
-    required this.notificationsEnabled,
     required this.sourceLanguage,
     required this.targetLanguage,
+    required this.notificationsEnabled,
+    required this.downloadOverWiFiOnly,
   });
 
   factory AppUserPref.standard() {
@@ -24,9 +26,10 @@ class AppUserPref {
       langIndex: 0,
       isFirstTime: true,
       theme: ThemeMode.light,
-      notificationsEnabled: true,
+      targetLanguage: "arabic",
       sourceLanguage: "english",
-      targetLanguage: "arabic"
+      notificationsEnabled: true,
+      downloadOverWiFiOnly: true,
     );
   }
 
@@ -35,19 +38,21 @@ class AppUserPref {
     int? langIndex,
     ThemeMode? theme,
     bool? isFirstTime,
-    bool? notificationsEnabled,
     bool? vibrationEnabled,
     String? sourceLanguage,
     String? targetLanguage,
+    bool? notificationsEnabled,
+    bool? downloadOverWiFiOnly,
   }) {
     return AppUserPref(
       lang: lang ?? this.lang,
       theme: theme ?? this.theme,
       langIndex: langIndex ?? this.langIndex,
       isFirstTime: isFirstTime ?? this.isFirstTime,
-      notificationsEnabled: notificationsEnabled ?? this.notificationsEnabled,
       sourceLanguage: sourceLanguage ?? this.sourceLanguage,
       targetLanguage: targetLanguage ?? this.targetLanguage,
+      notificationsEnabled: notificationsEnabled ?? this.notificationsEnabled,
+      downloadOverWiFiOnly: downloadOverWiFiOnly ?? this.downloadOverWiFiOnly,
     );
   }
 
@@ -60,6 +65,7 @@ class AppUserPref {
       targetLanguage: json['targetLanguage'] as String? ?? "arabic",
       sourceLanguage: json['sourceLanguage'] as String? ?? "english",
       notificationsEnabled: json['notificationsEnabled'] as bool? ?? true,
+      downloadOverWiFiOnly: json['downloadOverWiFiOnly'] as bool? ?? false,
     );
   }
 
@@ -69,9 +75,10 @@ class AppUserPref {
       'langIndex': langIndex,
       'theme': theme.index,
       'isFirstTime': isFirstTime,
-      'notificationsEnabled': notificationsEnabled,
       'sourceLanguage': sourceLanguage,
       'targetLanguage': targetLanguage,
+      'notificationsEnabled': notificationsEnabled,
+      'downloadOverWiFiOnly': downloadOverWiFiOnly,
     };
   }
 }

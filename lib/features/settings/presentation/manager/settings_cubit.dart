@@ -4,8 +4,6 @@ import '../../models/language_model.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hydrated_bloc/hydrated_bloc.dart';
 
-
-
 class SettingsCubit extends HydratedCubit<AppUserPref> {
   SettingsCubit() : super(AppUserPref.standard());
 
@@ -20,13 +18,20 @@ class SettingsCubit extends HydratedCubit<AppUserPref> {
 
   void updateTheme(ThemeMode theme) => emit(state.copyWith(theme: theme));
 
-  void toggleNotifications() => emit(state.copyWith(notificationsEnabled: !state.notificationsEnabled));
+  void toggleFirstTimeUser() =>
+      emit(state.copyWith(isFirstTime: !state.isFirstTime));
 
-  void toggleFirstTimeUser() => emit(state.copyWith(isFirstTime: !state.isFirstTime));
+  void updateSourceLanguage(String sourceLanguage) =>
+      emit(state.copyWith(sourceLanguage: sourceLanguage));
 
-  void updateSourceLanguage(String sourceLanguage) => emit(state.copyWith(sourceLanguage: sourceLanguage));
+  void updateTargetLanguage(String targetLanguage) =>
+      emit(state.copyWith(targetLanguage: targetLanguage));
 
-  void updateTargetLanguage(String targetLanguage) => emit(state.copyWith(targetLanguage: targetLanguage));
+  void toggleNotifications() =>
+      emit(state.copyWith(notificationsEnabled: !state.notificationsEnabled));
+
+  void toggleDownloadOverWiFiOnly() =>
+      emit(state.copyWith(downloadOverWiFiOnly: !state.downloadOverWiFiOnly));
 
   @override
   AppUserPref? fromJson(Map<String, dynamic> json) {

@@ -5,7 +5,7 @@
 
     "copySuccess":"Copied to clipboard",
     "@copySuccess": {
-        "description": "The message displayed when text is copied to the clipboard"
+        "description": "The message displayed when text is successfully copied to the clipboard"
     },
 
 
@@ -229,5 +229,17 @@
     "otherLanguages":"Other Languages",
     "@otherLanguages": {
         "description": "The label for other languages"
+    },
+
+
+
+    "downloadFrowWifiOnlyTitle":"Download from Wi-Fi Only",
+    "@downloadFrowWifiOnlyTitle": {
+        "description": "The title for downloading from Wi-Fi"
+    },
+    "downloadFrowWifiOnlySubtitle":"Download language packs only when connected to Wi-Fi to save data.",
+    "@downloadFrowWifiOnlySubtitle": {
+        "description": "The subtitle for downloading from Wi-Fi"
     }
+
 }

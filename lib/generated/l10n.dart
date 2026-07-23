@@ -55,7 +55,8 @@ class S {
     return Intl.message(
       'Copied to clipboard',
       name: 'copySuccess',
-      desc: 'The message displayed when text is copied to the clipboard',
+      desc:
+          'The message displayed when text is successfully copied to the clipboard',
       args: [],
     );
   }
@@ -546,6 +547,26 @@ class S {
       'Other Languages',
       name: 'otherLanguages',
       desc: 'The label for other languages',
+      args: [],
+    );
+  }
+
+  /// `Download from Wi-Fi Only`
+  String get downloadFrowWifiOnlyTitle {
+    return Intl.message(
+      'Download from Wi-Fi Only',
+      name: 'downloadFrowWifiOnlyTitle',
+      desc: 'The title for downloading from Wi-Fi',
+      args: [],
+    );
+  }
+
+  /// `Download language packs only when connected to Wi-Fi to save data.`
+  String get downloadFrowWifiOnlySubtitle {
+    return Intl.message(
+      'Download language packs only when connected to Wi-Fi to save data.',
+      name: 'downloadFrowWifiOnlySubtitle',
+      desc: 'The subtitle for downloading from Wi-Fi',
       args: [],
     );
   }

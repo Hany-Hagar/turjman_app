@@ -229,5 +229,16 @@
     "otherLanguages":"لغات أخرى",
     "@otherLanguages": {
         "description": "نص التسمية للغات أخرى"
+    },
+
+
+
+    "downloadFrowWifiTitle":"تنزيل من  Wi-Fi",
+    "@downloadFrowWifiTitle": {
+        "description": "نص التسمية لعنوان التنزيل من Wi-Fi"
+    },
+    "downloadFrowWifiSubtitle":"قم بتنزيل حزم اللغة فقط عند الاتصال بشبكة Wi-Fi",
+    "@downloadFrowWifiSubtitle": {
+        "description": "نص التسمية للعنوان الفرعي للتنزيل من Wi-Fi"
     }
 }
