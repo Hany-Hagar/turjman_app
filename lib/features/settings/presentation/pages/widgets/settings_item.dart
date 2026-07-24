@@ -43,7 +43,7 @@ class SettingsItem extends StatelessWidget {
         size: 12.sp,
         maxLines: 2,
         type: Type.header,
-        opacity: FontOpacity.overLow,
+        opacity: FontOpacity.medium,
       ),
       trailing: isSwitch
           ? _Switch(value: switchValue, onChanged: onSwitchChanged!)
@@ -52,7 +52,7 @@ class SettingsItem extends StatelessWidget {
   }
 
   EdgeInsetsGeometry _getPadding() {
-    if (isSwitch) {
+    if (!isSwitch) {
       return EdgeInsets.symmetric(horizontal: 12.w, vertical: 0.h);
     } else {
       return EdgeInsetsDirectional.only(

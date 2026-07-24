@@ -62,7 +62,7 @@ class _SourceLanguage extends StatelessWidget {
           backgroundColor: Colors.transparent,
           controller: cubit.sourceTextController,
           hintStyle: Styles.textStyle500.copyWith(
-            color: Colors.grey,
+            color: Theme.of(context).hintColor.withValues(alpha: 0.5),
             fontSize: 14.0,
           ),
           onChanged: (value) =>
@@ -115,7 +115,7 @@ class _LanguageTitle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var color = Theme.of(context).disabledColor;
+    var color = Theme.of(context).hintColor.withValues(alpha: 0.7);
     return Padding(
       padding: EdgeInsets.only(top: 10.h),
       child: Row(

@@ -1,4 +1,4 @@
-
+import 'app_card.dart';
 import 'theme_item.dart';
 import 'settings_item.dart';
 import 'settings_title.dart';
@@ -27,8 +27,8 @@ class SettingsBody extends StatelessWidget {
         const ThemeItem(),
         SettingsItem(
           icon: IconBroken.Swap,
-          iconColor: Colors.blue,
           title: s.languageTitle,
+          iconColor: Colors.purple,
           subtitle: s.languageSubtitle,
           navigationPage: const AppLanguageView(),
         ),
@@ -40,9 +40,8 @@ class SettingsBody extends StatelessWidget {
           subtitle: s.offlineLanguagesSubtitle,
           navigationPage: const OfflineLanguagesView(),
         ),
-        // Download over Wi-Fi only setting
         BlocBuilder<SettingsCubit, AppUserPref>(
-          builder:(context, state) =>  SettingsItem(
+          builder: (context, state) => SettingsItem(
             icon: Icons.wifi,
             isSwitch: true,
             iconColor: Colors.orange,
@@ -50,8 +49,12 @@ class SettingsBody extends StatelessWidget {
             subtitle: s.downloadFrowWifiOnlySubtitle,
             switchValue: cubit.state.downloadOverWiFiOnly,
             onSwitchChanged: (value) => cubit.toggleDownloadOverWiFiOnly(),
-          )
+          ),
         ),
+        Spacer(),
+        AppCard(
+        ),
+        SizedBox(height: 20.h),
       ],
     );
   }

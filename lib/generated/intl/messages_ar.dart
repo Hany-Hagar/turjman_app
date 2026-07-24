@@ -22,6 +22,8 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "appCardSubtitle":
+            MessageLookupByLibrary.simpleMessage("ترجم كل شيء. اربط الجميع."),
         "appLanguage": MessageLookupByLibrary.simpleMessage("لغة التطبيق"),
         "appLanguageSubtitle":
             MessageLookupByLibrary.simpleMessage("اختر لغتك المفضلة للتطبيق"),
@@ -36,6 +38,10 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("تم النسخ إلى الحافظة"),
         "dataAndStorage":
             MessageLookupByLibrary.simpleMessage("البيانات والتخزين"),
+        "downloadFrowWifiOnlySubtitle": MessageLookupByLibrary.simpleMessage(
+            "قم بتنزيل اللغات فقط عند الاتصال بشبكة واي فاي لتوفير البيانات"),
+        "downloadFrowWifiOnlyTitle":
+            MessageLookupByLibrary.simpleMessage("تنزيل من الواي فاي فقط"),
         "downloadedLanguages":
             MessageLookupByLibrary.simpleMessage("اللغات المحمّلة"),
         "emptyTranslations":
@@ -91,6 +97,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "translation": MessageLookupByLibrary.simpleMessage("الترجمة"),
         "translationTitle": MessageLookupByLibrary.simpleMessage("الترجمة"),
         "translations": MessageLookupByLibrary.simpleMessage("الترجمات"),
+        "update": MessageLookupByLibrary.simpleMessage("تحديث"),
+        "version": MessageLookupByLibrary.simpleMessage("النسخة"),
         "viewAll": MessageLookupByLibrary.simpleMessage("عرض الكل"),
         "voice": MessageLookupByLibrary.simpleMessage("صوت")
       };

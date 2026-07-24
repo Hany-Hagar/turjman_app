@@ -22,6 +22,8 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "appCardSubtitle": MessageLookupByLibrary.simpleMessage(
+            "Translate everything. Connect everyone."),
         "appLanguage": MessageLookupByLibrary.simpleMessage("App Language"),
         "appLanguageSubtitle": MessageLookupByLibrary.simpleMessage(
             "Select your preferred language for the app"),
@@ -99,6 +101,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "translation": MessageLookupByLibrary.simpleMessage("Translation"),
         "translationTitle": MessageLookupByLibrary.simpleMessage("Translation"),
         "translations": MessageLookupByLibrary.simpleMessage("Translations"),
+        "update": MessageLookupByLibrary.simpleMessage("Update"),
+        "version": MessageLookupByLibrary.simpleMessage("Version"),
         "viewAll": MessageLookupByLibrary.simpleMessage("View All"),
         "voice": MessageLookupByLibrary.simpleMessage("Voice")
       };

@@ -109,7 +109,7 @@ class _ItemData extends StatelessWidget {
             CustomText(
               size: 16.sp,
               text: isSource ? s.sourceTitle : s.translationTitle,
-              color: isSource ? theme.disabledColor : theme.primaryColor,
+              color: isSource ? theme.hintColor.withValues(alpha: 0.7) : theme.primaryColor,
               type: Type.overMedium,
             ),
             Spacer(),

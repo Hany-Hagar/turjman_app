@@ -570,6 +570,36 @@ class S {
       args: [],
     );
   }
+
+  /// `Translate everything. Connect everyone.`
+  String get appCardSubtitle {
+    return Intl.message(
+      'Translate everything. Connect everyone.',
+      name: 'appCardSubtitle',
+      desc: 'The subtitle for the app card',
+      args: [],
+    );
+  }
+
+  /// `Version`
+  String get version {
+    return Intl.message(
+      'Version',
+      name: 'version',
+      desc: 'The label for the app version',
+      args: [],
+    );
+  }
+
+  /// `Update`
+  String get update {
+    return Intl.message(
+      'Update',
+      name: 'update',
+      desc: 'The label for the update button',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

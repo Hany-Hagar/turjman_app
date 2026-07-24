@@ -14,4 +14,7 @@ class Assets {
   // Lottie Animations
   static const String error = 'assets/lotties/error.json';
   static const String empty = 'assets/lotties/empty_translations.json';
+
+  // App Card Background
+  static const String appCardBg = 'assets/images/appCardBg.png';
 }

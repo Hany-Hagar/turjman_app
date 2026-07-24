@@ -12,12 +12,15 @@ class SettingsTitle extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var fontSize = SettingsCubit.get(context).state.langIndex == 0 ? size : size+5;
-    return CustomText(
-      text: title.toUpperCase(),
-      size: fontSize.sp,
-      letterSpacing: 1,
-      type: Type.overMedium,
-      color: color ?? Theme.of(context).disabledColor,
+    return Padding(
+      padding: EdgeInsets.only(top: 7.h, bottom: 3.h),
+      child: CustomText(
+        text: title.toUpperCase(),
+        size: fontSize.sp,
+        letterSpacing: 1,
+        type: Type.overMedium,
+        color: color ?? Theme.of(context).hintColor.withValues(alpha: 0.8),
+      )
     );
   }
 }

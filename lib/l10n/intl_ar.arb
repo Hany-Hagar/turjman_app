@@ -233,12 +233,27 @@
 
 
 
-    "downloadFrowWifiTitle":"تنزيل من  Wi-Fi",
-    "@downloadFrowWifiTitle": {
-        "description": "نص التسمية لعنوان التنزيل من Wi-Fi"
+    "downloadFrowWifiOnlyTitle":"تنزيل من الواي فاي فقط",
+    "@downloadFrowWifiOnlyTitle": {
+        "description": "نص التسمية لعنوان تنزيل من الواي فاي فقط"
     },
-    "downloadFrowWifiSubtitle":"قم بتنزيل حزم اللغة فقط عند الاتصال بشبكة Wi-Fi",
-    "@downloadFrowWifiSubtitle": {
-        "description": "نص التسمية للعنوان الفرعي للتنزيل من Wi-Fi"
+    "downloadFrowWifiOnlySubtitle":"قم بتنزيل اللغات فقط عند الاتصال بشبكة واي فاي لتوفير البيانات",
+    "@downloadFrowWifiOnlySubtitle": {
+        "description": "نص التسمية للعنوان الفرعي للتنزيل من الواي فاي فقط"
+    },
+
+
+
+    "appCardSubtitle":"ترجم كل شيء. اربط الجميع.",
+    "@appCardSubtitle": {
+        "description": "نص التسمية للعنوان الفرعي لبطاقة التطبيق"
+    },
+    "version":"النسخة",
+    "@version": {
+        "description": "نص التسمية لعنوان نسخة التطبيق"
+    },
+    "update":"تحديث",
+    "@update": {
+        "description": "نص التسمية لزر التحديث"
     }
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:turjman_app/core/utils/styles.dart';
 import '../../manager/settings_cubit.dart';
 import '../../../../../generated/l10n.dart';
 import '../../../models/app_user_pref.dart';
@@ -28,7 +29,7 @@ class ThemeItem extends StatelessWidget {
         text: s.themeSubtitle,
         size: 12.sp,
         type: Type.header,
-        opacity: FontOpacity.overLow,
+        opacity: FontOpacity.medium,
       ),
       children: [
         _Children(),
@@ -117,14 +118,17 @@ class _Child extends StatelessWidget {
         child: Center(
           child: AnimatedDefaultTextStyle(
             duration: const Duration(milliseconds: 500),
-            style: TextStyle(
-              fontSize: 15.sp,
-              fontWeight: FontWeight.w600,
+            style:Styles.textStyle500.copyWith(
               color: isSelected
                   ? Colors.white
-                  : Theme.of(context).textTheme.bodyLarge?.color,
+                  : Theme.of(context).textTheme.bodyMedium!.color,
+              fontSize: 15.sp,
             ),
-            child: Text(title, overflow: TextOverflow.ellipsis, maxLines: 1),
+            child: CustomText(
+              text: title,
+              size: 15.sp,
+              type: Type.overMedium,
+            ),
           ),
         ),
       ),

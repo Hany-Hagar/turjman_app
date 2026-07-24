@@ -240,6 +240,21 @@
     "downloadFrowWifiOnlySubtitle":"Download language packs only when connected to Wi-Fi to save data.",
     "@downloadFrowWifiOnlySubtitle": {
         "description": "The subtitle for downloading from Wi-Fi"
+    },
+
+
+
+    "appCardSubtitle":"Translate everything. Connect everyone.",
+    "@appCardSubtitle": {
+        "description": "The subtitle for the app card"
+    },
+    "version":"Version",
+    "@version": {
+        "description": "The label for the app version"
+    },
+    "update":"Update",
+    "@update": {
+        "description": "The label for the update button"
     }
 
 }
