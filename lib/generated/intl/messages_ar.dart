@@ -22,6 +22,8 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "aduioSubtitle": MessageLookupByLibrary.simpleMessage(
+            "تحدث للترجمة في الوقت الفعلي"),
         "appCardSubtitle":
             MessageLookupByLibrary.simpleMessage("ترجم كل شيء. اربط الجميع."),
         "appLanguage": MessageLookupByLibrary.simpleMessage("لغة التطبيق"),
@@ -29,6 +31,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("اختر لغتك المفضلة للتطبيق"),
         "appTitle": MessageLookupByLibrary.simpleMessage("تُرجمان"),
         "arabic": MessageLookupByLibrary.simpleMessage("العربية"),
+        "audioTitle": MessageLookupByLibrary.simpleMessage("الترجمة الصوتية"),
         "camera": MessageLookupByLibrary.simpleMessage("كاميرا"),
         "captureWithCamera":
             MessageLookupByLibrary.simpleMessage("التقاط بالكاميرا"),
@@ -83,6 +86,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("تخصيص التطبيق حسب تفضيلاتك"),
         "settingsTitle": MessageLookupByLibrary.simpleMessage("الإعدادات"),
         "source": MessageLookupByLibrary.simpleMessage("المصدر"),
+        "sourceText": MessageLookupByLibrary.simpleMessage("نص المصدر"),
         "sourceTextHint":
             MessageLookupByLibrary.simpleMessage("اكتب شيئًا للترجمة"),
         "sourceTitle": MessageLookupByLibrary.simpleMessage("المصدر"),
@@ -95,6 +99,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "themeSystem": MessageLookupByLibrary.simpleMessage("النظام"),
         "themeTitle": MessageLookupByLibrary.simpleMessage("المظهر"),
         "translation": MessageLookupByLibrary.simpleMessage("الترجمة"),
+        "translationText": MessageLookupByLibrary.simpleMessage("نص الترجمة"),
         "translationTitle": MessageLookupByLibrary.simpleMessage("الترجمة"),
         "translations": MessageLookupByLibrary.simpleMessage("الترجمات"),
         "update": MessageLookupByLibrary.simpleMessage("تحديث"),

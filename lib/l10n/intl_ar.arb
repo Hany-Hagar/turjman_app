@@ -98,6 +98,25 @@
 
 
 
+    "audioTitle":"الترجمة الصوتية",
+    "@audioTitle": {
+        "description": "نص التسمية لعنوان الترجمة الصوتية"
+    },
+    "aduioSubtitle":"تحدث للترجمة في الوقت الفعلي",
+    "@aduioSubtitle": {
+        "description": "نص التسمية للعنوان الفرعي للترجمة الصوتية"
+    },
+    "sourceText":"نص المصدر",
+    "@sourceText": {
+        "description": "نص التسمية لعنوان نص المصدر"
+    },
+    "translationText":"نص الترجمة",
+    "@translationText": {
+        "description": "نص التسمية لعنوان نص الترجمة"
+    },
+
+
+
     "imageTitle":"صورة إلى نص",
     "@imageTitle": {
         "description": "نص التسمية لعنوان الصورة"

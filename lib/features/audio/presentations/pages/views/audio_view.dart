@@ -1,5 +1,6 @@
 
 
+import '../../../../../generated/l10n.dart';
 import '../widgets/audio_body.dart';
 import 'package:flutter/material.dart';
 import '../../manager/audio_cubit.dart';
@@ -33,8 +34,8 @@ class _Top extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CustomAppBar(
-      title: "Audio Translation",
-      subTitle: "Speak to translate in real time",
+      title: S.of(context).audioTitle,
+      subTitle: S.of(context).aduioSubtitle,
     );
   }
 }

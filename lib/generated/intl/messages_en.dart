@@ -22,6 +22,8 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "aduioSubtitle": MessageLookupByLibrary.simpleMessage(
+            "Speak to translate in real time"),
         "appCardSubtitle": MessageLookupByLibrary.simpleMessage(
             "Translate everything. Connect everyone."),
         "appLanguage": MessageLookupByLibrary.simpleMessage("App Language"),
@@ -29,6 +31,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "Select your preferred language for the app"),
         "appTitle": MessageLookupByLibrary.simpleMessage("Turjuman"),
         "arabic": MessageLookupByLibrary.simpleMessage("Arabic"),
+        "audioTitle": MessageLookupByLibrary.simpleMessage("Audio Translation"),
         "camera": MessageLookupByLibrary.simpleMessage("Camera"),
         "captureWithCamera":
             MessageLookupByLibrary.simpleMessage("Capture with Camera"),
@@ -87,6 +90,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "Customize your app experience"),
         "settingsTitle": MessageLookupByLibrary.simpleMessage("Settings"),
         "source": MessageLookupByLibrary.simpleMessage("Source"),
+        "sourceText": MessageLookupByLibrary.simpleMessage("Source Text"),
         "sourceTextHint":
             MessageLookupByLibrary.simpleMessage("Type something to translate"),
         "sourceTitle": MessageLookupByLibrary.simpleMessage("Source"),
@@ -99,6 +103,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "themeSystem": MessageLookupByLibrary.simpleMessage("System"),
         "themeTitle": MessageLookupByLibrary.simpleMessage("Theme"),
         "translation": MessageLookupByLibrary.simpleMessage("Translation"),
+        "translationText":
+            MessageLookupByLibrary.simpleMessage("Translation Text"),
         "translationTitle": MessageLookupByLibrary.simpleMessage("Translation"),
         "translations": MessageLookupByLibrary.simpleMessage("Translations"),
         "update": MessageLookupByLibrary.simpleMessage("Update"),

@@ -98,6 +98,25 @@
 
 
 
+    "audioTitle":"Audio Translation",
+    "@audioTitle": {
+        "description": "The title for the audio translation feature"
+    },
+    "aduioSubtitle":"Speak to translate in real time",
+    "@aduioSubtitle": {
+        "description": "The subtitle for the audio translation feature"
+    },
+    "sourceText":"Source Text",
+    "@sourceText": {
+        "description": "The title for the source text field"
+    },
+    "translationText":"Translation Text",
+    "@translationText": {
+        "description": "The title for the translation text field"
+    },
+
+
+
     "imageTitle":"Image to Text",
     "@imageTitle": {
         "description": "The title for the image"

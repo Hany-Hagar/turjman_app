@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../manager/audio_cubit.dart';
 import '../../manager/audio_states.dart';
+import '../../../../../generated/l10n.dart';
 import '../../../../../core/utils/styles.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../../core/widgets/custom_text.dart';
@@ -14,7 +15,8 @@ class AudioBodyItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final String title = isSource ? "Source Text" : "Translated Text";
+    var s = S.of(context);
+    final String title = isSource ? s.sourceText : s.translationText;
     return BlocBuilder<AudioCubit, AudioStates>(
       builder: (context, state) {
         var theme = Theme.of(context);

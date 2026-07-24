@@ -251,6 +251,46 @@ class S {
     );
   }
 
+  /// `Audio Translation`
+  String get audioTitle {
+    return Intl.message(
+      'Audio Translation',
+      name: 'audioTitle',
+      desc: 'The title for the audio translation feature',
+      args: [],
+    );
+  }
+
+  /// `Speak to translate in real time`
+  String get aduioSubtitle {
+    return Intl.message(
+      'Speak to translate in real time',
+      name: 'aduioSubtitle',
+      desc: 'The subtitle for the audio translation feature',
+      args: [],
+    );
+  }
+
+  /// `Source Text`
+  String get sourceText {
+    return Intl.message(
+      'Source Text',
+      name: 'sourceText',
+      desc: 'The title for the source text field',
+      args: [],
+    );
+  }
+
+  /// `Translation Text`
+  String get translationText {
+    return Intl.message(
+      'Translation Text',
+      name: 'translationText',
+      desc: 'The title for the translation text field',
+      args: [],
+    );
+  }
+
   /// `Image to Text`
   String get imageTitle {
     return Intl.message(
